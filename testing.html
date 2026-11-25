@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Rasa - Kuliner Nusantara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-bright: #FFF8EE;
+            --accent-warm: #E05A2B;
+            --accent-gold: #F4A226;
+            --text-main: #2B211E;
+            --text-muted: #6E5C54;
+            --surface-soft: rgba(255, 250, 242, 0.92);
+            --surface-modal: rgba(255, 251, 245, 0.95);
+            --surface-border: rgba(224, 90, 43, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-bright);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            padding: 20px;
+        }
+
+        /* Navbar Sticky */
+        .navbar {
+            position: sticky;
+            top: 14px;
+            z-index: 100;
+            max-width: 1200px;
+            margin: 0 auto 24px auto;
+            padding: 12px 18px;
+            background-color: var(--surface-soft);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--surface-border);
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(43, 33, 30, 0.06);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .nav-home {
+            text-decoration: none;
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            color: var(--accent-warm);
+            padding: 6px 14px;
+            border-radius: 14px;
+            background-color: rgba(244, 162, 38, 0.16);
+            transition: background-color 0.2s ease, transform 0.15s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-home:hover {
+            background-color: rgba(244, 162, 38, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .nav-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cat-btn {
+            border: 1px solid var(--surface-border);
+            background-color: rgba(255, 252, 247, 0.78);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 14px;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .cat-btn:hover,
+        .cat-btn.active {
+            background-color: var(--accent-warm);
+            color: #FFFDF9;
+            border-color: var(--accent-warm);
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto 36px auto;
+            padding: 56px 24px;
+            border-radius: 24px;
+            box-shadow: 0 10px 28px rgba(224, 90, 43, 0.14);
+            background: linear-gradient(135deg, #FFE6C7 0%, #FFD0A1 55%, #FFC085 100%);
+            border: 1px solid rgba(224, 90, 43, 0.16);
+        }
+
+        .header-gambar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.22;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            margin: 0 0 8px 0;
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(32px, 5vw, 46px);
+            font-weight: 400;
+            color: #9E320E;
+        }
+
+        header p {
+            margin: 0 0 22px 0;
+            font-size: 15px;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 11px 20px;
+            border: 1.5px solid rgba(224, 90, 43, 0.35);
+            border-radius: 20px;
+            background-color: rgba(255, 251, 245, 0.85);
+            backdrop-filter: blur(6px);
+        }
+
+        #searchInput {
+            border: none;
+            outline: none;
+            background: transparent;
+            width: 100%;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        #searchInput::placeholder {
+            color: var(--text-muted);
+        }
+
+        .section-block {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+        }
+
+        .section-heading {
+            margin: 0 0 18px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-family: 'DM Serif Display', serif;
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--text-main);
+        }
+
+        .section-heading span {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .province-group {
+            margin-bottom: 26px;
+        }
+
+        .province-title {
+            margin: 0 0 12px 0;
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #9E320E;
+            padding-bottom: 6px;
+            border-bottom: 1.5px solid rgba(224, 90, 43, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .province-sub {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .kotak {
+            position: relative;
+            height: 215px;
+            border: 1px solid rgba(224, 90, 43, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 16px;
+            color: #FFFDF9;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(43, 33, 30, 0.08);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+        }
+
+        .kotak:hover,
+        .kotak:focus-visible {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(224, 90, 43, 0.2);
+            outline: 2px solid var(--accent-warm);
+            outline-offset: 2px;
+        }
+
+        .kotak img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .kotak::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(35, 22, 16, 0.88) 8%, rgba(35, 22, 16, 0.14) 68%);
+            z-index: 1;
+        }
+
+        .region-badge {
+            position: relative;
+            z-index: 2;
+            align-self: flex-start;
+            font-size: 11px;
+            font-weight: 600;
+            background-color: rgba(244, 162, 38, 0.92);
+            color: #2B211E;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-bottom: 6px;
+        }
+
+        .city-name {
+            position: relative;
+            z-index: 2;
+            font-size: 12px;
+            font-weight: 600;
+            color: #FFD59E;
+            letter-spacing: 0.2px;
+            margin-bottom: 2px;
+        }
+
+        .food-name {
+            position: relative;
+            z-index: 2;
+            font-family: 'DM Serif Display', serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #FFFDF9;
+            line-height: 1.2;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            color: #9E320E;
+            background-color: rgba(255, 250, 242, 0.84);
+            backdrop-filter: blur(8px);
+            border: 1.5px dashed rgba(224, 90, 43, 0.35);
+            border-radius: 22px;
+            max-width: 500px;
+            margin: 36px auto;
+            padding: 26px 22px;
+        }
+
+        /* Modal Popup Detail Makanan */
+        .modal-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(43, 33, 30, 0.52);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal-card {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            background-color: var(--surface-modal);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(224, 90, 43, 0.25);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(43, 33, 30, 0.25);
+            animation: modalPop 0.2s ease-out;
+        }
+
+        @keyframes modalPop {
+            from {
+                opacity: 0;
+                transform: translateY(10px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-image-wrap {
+            position: relative;
+            height: 220px;
+            width: 100%;
+            background-color: #FFE6C7;
+        }
+
+        .modal-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 36px;
+            height: 36px;
+            border: none;
+            border-radius: 14px;
+            background-color: rgba(255, 250, 242, 0.9);
+            color: var(--text-main);
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(43, 33, 30, 0.16);
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background-color: var(--accent-warm);
+            color: #FFFDF9;
+        }
+
+        .modal-body {
+            padding: 22px 24px 26px 24px;
+        }
+
+        .modal-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .modal-region-tag {
+            font-size: 12px;
+            font-weight: 700;
+            background-color: rgba(244, 162, 38, 0.28);
+            color: #9E320E;
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        .modal-province-tag {
+            font-size: 12px;
+            font-weight: 600;
+            background-color: rgba(224, 90, 43, 0.12);
+            color: var(--text-main);
+            padding: 4px 12px;
+            border-radius: 12px;
+        }
+
+        .modal-city-line {
+            margin: 0 0 6px 0;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .modal-title {
+            margin: 0 0 10px 0;
+            font-family: 'DM Serif Display', serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #9E320E;
+        }
+
+        .modal-desc {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--text-main);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" aria-label="Navigasi Utama">
+        <a href="#" class="nav-home" id="homeLink" title="Kembali ke atas & reset filter">&#8962; Home</a>
+        <div class="nav-categories" role="group" aria-label="Kategori Daerah">
+            <button type="button" class="cat-btn active" data-region="all">Semua Daerah</button>
+            <button type="button" class="cat-btn" data-region="Sumatra">Sumatra</button>
+            <button type="button" class="cat-btn" data-region="Jawa">Jawa</button>
+            <button type="button" class="cat-btn" data-region="Kalimantan">Kalimantan</button>
+            <button type="button" class="cat-btn" data-region="Sulawesi">Sulawesi</button>
+            <button type="button" class="cat-btn" data-region="Bali & Nusa Tenggara">Bali & Nusa Tenggara</button>
+            <button type="button" class="cat-btn" data-region="Maluku & Papua">Maluku & Papua</button>
+        </div>
+    </nav>
+
+    <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV0odtbfBiZkXZMwsp2R2yWCE0QZs3qMOjOVEXUmRWAQ&s=10" alt="Background Kuliner" class="header-gambar">
+        <div class="header-content">
+            <h1>Jelajah Rasa</h1>
+            <p>Daftar Makanan Khas dari 38 Provinsi Indonesia</p>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Cari makanan, kota, provinsi, atau 'Papua'... ">
+            </div>
+        </div>
+    </header>
+
+    <!-- Bagian Rekomendasi: mewakili seluruh 6 wilayah utama Indonesia -->
+    <section class="section-block" id="rekomendasiSection">
+        <div class="section-heading">
+            <h2>Rekomendasi Pilihan</h2>
+            <span id="rekomendasiLabel">7 hidangan unggulan</span>
+        </div>
+        <div class="grid-container" id="rekomendasiGrid">
+            <div class="kotak" data-region="Sumatra" data-province="Sumatra Barat" data-city="Kota Padang" data-desc="Olahan daging sapi khas Minangkabau yang dimasak perlahan dengan santan kental dan racikan rempah kaya aroma hingga bumbunya meresap pekat.">
+                <span class="region-badge">Sumatra</span>
+                <div class="city-name">Kota Padang</div>
+                <div class="food-name">Rendang</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfsXSkbTvYnrDUTSc2wMAVQZJ5zOIfj3HFwOWh2ohQxA&s=10" alt="Rendang">
+            </div>
+            <div class="kotak" data-region="Jawa" data-province="DI Yogyakarta" data-city="Kota Yogyakarta" data-desc="Masakan nangka muda khas Yogyakarta yang dimasak lama dengan gula aren dan santan sehingga bercita rasa manis gurih serta bertekstur lembut.">
+                <span class="region-badge">Jawa</span>
+                <div class="city-name">Kota Yogyakarta</div>
+                <div class="food-name">Gudeg</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNBO7Ey9SbCqjPXKwyZWY76zpWh-uQrtv7aHUy6CFTeQ&s=10" alt="Gudeg">
+            </div>
+            <div class="kotak" data-region="Jawa" data-province="Jawa Timur" data-city="Kota Surabaya" data-desc="Sup daging sapi berkuah hitam pekat khas Jawa Timur yang mendapatkan warna dan cita rasa khas dari bumbu kluwek serta rempah aromatik.">
+                <span class="region-badge">Jawa</span>
+                <div class="city-name">Kota Surabaya</div>
+                <div class="food-name">Rawon</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQguyND5lrBBdu2UCX_Vilh6K-tH11vl3J5rU_A1OzMtA&s=10" alt="Rawon">
+            </div>
+            <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Selatan" data-city="Kota Banjarmasin" data-desc="Soto ayam khas Banjar dengan kuah bening berempah hangat seperti kayu manis, cengkeh, dan kapulaga, biasanya disajikan bersama ketupat atau lontong.">
+                <span class="region-badge">Kalimantan</span>
+                <div class="city-name">Kota Banjarmasin</div>
+                <div class="food-name">Soto Banjar</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvdHkZO8UtmDppoOzKIDS074CwmAr4I-yTv38aL5BP0A&s=10" alt="Soto Banjar">
+            </div>
+            <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Selatan" data-city="Kota Makassar" data-desc="Sup daging dan jeroan khas Makassar dengan kuah gurih kaya kacang tanah sangrai dan rempah pilihan, nikmat disantap bersama buras atau ketupat.">
+                <span class="region-badge">Sulawesi</span>
+                <div class="city-name">Kota Makassar</div>
+                <div class="food-name">Coto Makassar</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzACYhZXnyAzSAUBD1ZIlru_Vv_rOngGjOFPyvSlUgJg&s=10" alt="Coto Makassar">
+            </div>
+            <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Nusa Tenggara Barat" data-city="Kota Mataram" data-desc="Ayam kampung panggang khas Lombok yang dibumbui pasta cabai merah, bawang, terasi, dan kencur sehingga rasanya pedas, gurih, dan harum.">
+                <span class="region-badge">Bali & Nusa Tenggara</span>
+                <div class="city-name">Kota Mataram</div>
+                <div class="food-name">Ayam Taliwang</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThAAblQrD0UNVUYg8M7aQ6p0CgHWshJs_PnbNOjg9-XQ&s=10" alt="Ayam Taliwang">
+            </div>
+            <div class="kotak" data-region="Maluku & Papua" data-province="Papua" data-city="Kota Jayapura" data-desc="Makanan pokok berbahan dasar sagu khas Papua dengan tekstur kenyal lengket yang nikmat dipadukan dengan kuah ikan kuning berbumbu segar.">
+                <span class="region-badge">Maluku & Papua</span>
+                <div class="city-name">Kota Jayapura</div>
+                <div class="food-name">Papeda</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjVd6r9eX3CFDT1s-BVbq3toebRJcNTX7auPNYv2VhA&s=10" alt="Papeda">
+            </div>
+        </div>
+    </section>
+
+    <!-- Bagian Semua Makanan: 38 Provinsi Lengkap (114 Makanan) -->
+    <section class="section-block" id="semuaMakananSection">
+        <div class="section-heading">
+            <h2>Semua Makanan per Provinsi</h2>
+            <span id="totalVisibleLabel">Menampilkan 114 makanan dari 38 provinsi</span>
+        </div>
+
+        <!-- SUMATRA (10 Provinsi) -->
+        <div class="province-group" data-region="Sumatra" data-province="Aceh">
+            <h3 class="province-title"><span>Aceh</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Aceh" data-city="Banda Aceh" data-desc="Mi tebal khas Aceh dengan bumbu rempah yang kuat, dapat dimasak goreng atau berkuah serta dipadukan dengan daging sapi, ayam, atau makanan laut.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Banda Aceh</div>
+                    <div class="food-name">Mie Aceh</div>
+                    <img src="https://www.astronauts.id/blog/wp-content/uploads/2023/10/Resep-Mie-Aceh-Goreng-Simpel-Untuk-Masak-di-Rumah.jpg" alt="Mie Aceh">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Aceh" data-city="Matang Glumpang Dua" data-desc="Sate daging khas Matang Glumpang Dua, Aceh, yang dibumbui rempah gurih dan disajikan dengan kuah kaldu terpisah yang kaya rasa.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Matang Glumpang Dua</div>
+                    <div class="food-name">Sate Matang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGvRQUDp076vSvPY9axdgC2HSl_III464Zso8_ceMrcQ&s=10" alt="Sate Matang">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Aceh" data-city="Banda Aceh" data-desc="Masakan ikan berkuah asam segar khas Aceh yang memadukan belimbing wuluh, kunyit, dan cabai tanpa santan.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Banda Aceh</div>
+                    <div class="food-name">Asam Keueng</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFnhAtNgKPfaSXEGMnbdPxBZaVvcEDWmcXO3B4HgiI_w&s=10" alt="Asam Keueng">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sumatra" data-province="Sumatra Utara">
+            <h3 class="province-title"><span>Sumatra Utara</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Sumatra Utara" data-city="Kota Medan" data-desc="Kue tradisional khas Medan dengan tekstur berserat dan kenyal serta aroma harum daun jeruk dan pandan yang khas.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Medan</div>
+                    <div class="food-name">Bika Ambon</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiR_iYzUs_dyRRRJZr1Tgf8bef0c7V6JiK5bxY6KGdvg&s=10" alt="Bika Ambon">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Sumatra Utara" data-city="Kabupaten Toba" data-desc="Hidangan ikan mas khas Batak yang dimatangkan tanpa dimasak menggunakan asam jungga dan bumbu rempah andaliman yang segar.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kabupaten Toba</div>
+                    <div class="food-name">Naniura</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTun9D5uzgCpbzKapUcCkJAcjy8SaF-I9BcGScjMgRTVw&s=10" alt="Naniura">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Sumatra Utara" data-city="Kabupaten Tapanuli Utara" data-desc="Masakan ikan mas berbumbu kuning khas Batak dengan andaliman, kecombrang, dan bawang batak yang dimasak hingga kuahnya menyusut.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kabupaten Tapanuli Utara</div>
+                    <div class="food-name">Arsik</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOrXzFb6Y34ZhRnS6khDBJIXyNlShMMI_BwVahtkgH2Q&s=10" alt="Arsik">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sumatra" data-province="Sumatra Barat">
+            <h3 class="province-title"><span>Sumatra Barat</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Sumatra Barat" data-city="Kota Padang" data-desc="Olahan daging sapi khas Minangkabau yang dimasak perlahan dengan santan kental dan racikan rempah kaya aroma hingga bumbunya meresap pekat.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Padang</div>
+                    <div class="food-name">Rendang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfsXSkbTvYnrDUTSc2wMAVQZJ5zOIfj3HFwOWh2ohQxA&s=10" alt="Rendang">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Sumatra Barat" data-city="Kota Padang Panjang" data-desc="Sate daging sapi atau lidah khas Sumatra Barat yang disiram kuah kental berempah hangat dan ditaburi bawang merah goreng.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Padang Panjang</div>
+                    <div class="food-name">Sate Padang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOKgd1nKI-lIVXgQvBrjyE3iGXYqaZ-mwNlwHdR9nXIw&s=10" alt="Sate Padang">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Sumatra Barat" data-city="Kota Bukittinggi" data-desc="Irisan tipis daging sapi goreng kering yang dilumuri sambal cabai merah tumbuk kasar dengan cita rasa pedas gurih yang nikmat.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Bukittinggi</div>
+                    <div class="food-name">Dendeng Balado</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN0ls1nWv55FzYPoOK15IlCFR0QZwnwFIsTH0OJwm4uw&s=10" alt="Dendeng Balado">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sumatra" data-province="Riau">
+            <h3 class="province-title"><span>Riau</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Riau" data-city="Kota Pekanbaru" data-desc="Hidangan mi kenyal berbahan pati sagu khas Riau yang ditumis dengan bumbu gurih, taoge, kucai, serta ikan teri atau udang.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Pekanbaru</div>
+                    <div class="food-name">Mie Sagu</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmk-5oscLkBIfignYEJLOCn-0z2whsuGnLyZotA9h6Qw&s=10" alt="Mie Sagu">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Riau" data-city="Kota Pekanbaru" data-desc="Sup tulang kaki sapi khas Riau dengan kuah kaldu gurih kaya rempah seperti kayu manis, cengkeh, dan kapulaga.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Pekanbaru</div>
+                    <div class="food-name">Sup Tunjang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLkiJ54458mlMVx3RyEAn6i3nDr-M95n_XGLikgDL44w&s=10" alt="Sup Tunjang">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Riau" data-city="Kabupaten Siak" data-desc="Masakan gulai bersantan khas Melayu Riau yang menggunakan bumbu terasi (belacan) sehingga menghasilkan rasa gurih pedas yang khas.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kabupaten Siak</div>
+                    <div class="food-name">Gulai Belacan</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAAWpymhRUL4JwhhXuX-8K3YUaYqNg5Arj0wWCHBeRyw&s=10" alt="Gulai Belacan">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sumatra" data-province="Kepulauan Riau">
+            <h3 class="province-title"><span>Kepulauan Riau</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Kepulauan Riau" data-city="Kota Tanjungpinang" data-desc="Mi kuah khas Kepulauan Riau dengan kuah kental berwarna kecokelatan yang gurih manis dan ditaburi bawang goreng serta irisan cabai.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Tanjungpinang</div>
+                    <div class="food-name">Mie Lendir</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQstpFTcIVzCFQM7FdSTRPtKj98iIcRML-wjiBQeHXzsg&s=10" alt="Mie Lendir">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Kepulauan Riau" data-city="Kota Batam" data-desc="Siput laut khas perairan Kepulauan Riau yang direbus dengan rempah dan disajikan bersama sambal asam pedas yang menyegarkan.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Batam</div>
+                    <div class="food-name">Gonggong</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpDKhsfTlN9Cnj29uUa0wtbPBqWj_NaGgqxH9veXCQ3A&s=10" alt="Gonggong">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Kepulauan Riau" data-city="Kabupaten Kepulauan Anambas" data-desc="Mi goreng atau rebus khas Tarempa, Anambas, yang dimasak dengan suwiran ikan tongkol, taoge, dan bumbu pedas manis.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kabupaten Kepulauan Anambas</div>
+                    <div class="food-name">Mie Tarempa</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_EeS-pIahVuWJWuFvfB95sZJ6nRx76Yk7-_hsinRPgQ&s=10" alt="Mie Tarempa">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sumatra" data-province="Jambi">
+            <h3 class="province-title"><span>Jambi</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Jambi" data-city="Kota Jambi" data-desc="Olahan ikan giling berbentuk pipih seperti pempek yang dimasak dalam kuah gulai santan berbumbu khas Jambi.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Jambi</div>
+                    <div class="food-name">Gulai Tepek Ikan</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX4OJ3OX6IoKecdRFzfc7i351_k1MsT1Kca6UM3NBl0A&s=10" alt="Gulai Tepek Ikan">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Jambi" data-city="Kota Jambi" data-desc="Olahan daging sapi khas Jambi yang dimasak dengan kecap manis, kelapa sangrai, dan rempah hingga berwarna cokelat pekat dan empuk.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Jambi</div>
+                    <div class="food-name">Daging Masak Hitam</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQo6N7o8BmZzjEUV9qmgUJ_L1Jt83sWyrOOVhdXPf24A&s=10" alt="Daging Masak Hitam">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Jambi" data-city="Kota Jambi" data-desc="Nasi gurih khas Jambi yang dimasak dengan santan dan rempah aromatik lalu disajikan bersama telur, teri kacang, dan sambal.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Jambi</div>
+                    <div class="food-name">Nasi Gemuk</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQarjzTG9f0CV9JN7PkrVHsWh1P_1iBZoHENIR0rQP6Ww&s=10" alt="Nasi Gemuk">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sumatra" data-province="Sumatra Selatan">
+            <h3 class="province-title"><span>Sumatra Selatan</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Sumatra Selatan" data-city="Kota Palembang" data-desc="Kuliner ikonik Palembang berbahan dasar ikan giling dan sagu yang disajikan bersama kuah cuko bercita rasa asam, manis, dan pedas.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Palembang</div>
+                    <div class="food-name">Pempek</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2HRkzvVEWn_K40s__g-PGlMNXtXQ2ucE2H4Qce-Y77A&s=10" alt="Pempek">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Sumatra Selatan" data-city="Kota Palembang" data-desc="Hidangan mi kuning besar khas Palembang yang disiram kuah santan kental kaldu udang, taoge, telur rebus, dan kucai.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Palembang</div>
+                    <div class="food-name">Mie Celor</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRljn230MlHrgjiMOsGWVaSS8_7k1cc4jOBSHXHFsUa5A&s=10" alt="Mie Celor">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Sumatra Selatan" data-city="Kota Palembang" data-desc="Bulatan kecil olahan ikan dan sagu khas Palembang yang disajikan dalam kuah kaldu udang bening bersama soun, jamur kuping, dan bengkuang.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Palembang</div>
+                    <div class="food-name">Tekwan</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWm8_KzVxscmc8mpgbtAQyl7qT8Iv4ODyYI08s2b70Ww&s=10" alt="Tekwan">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sumatra" data-province="Bengkulu">
+            <h3 class="province-title"><span>Bengkulu</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Bengkulu" data-city="Kota Bengkulu" data-desc="Masakan tradisional khas Bengkulu berbahan daging ikan hiu yang dimasak dengan bumbu kuning atau rempah pedas gurih.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Bengkulu</div>
+                    <div class="food-name">Bagar Hiu</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5eSPtjjVW1juUpMeerlLcOOBidJmyhytSbRuQKU1KUw&s=10" alt="Bagar Hiu">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Bengkulu" data-city="Kabupaten Rejang Lebong" data-desc="Makanan fermentasi tradisional suku Rejang di Bengkulu yang terbuat dari irisan rebung muda dan ikan air tawar berbumbu gurih.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kabupaten Rejang Lebong</div>
+                    <div class="food-name">Lema</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKT3tQhI1PtqaEvdaSKRmXU4ndrlC6C39b8g-f9eJkIA&s=10" alt="Lema">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Bengkulu" data-city="Kota Bengkulu" data-desc="Sayur gulai khas Bengkulu berbahan pisang muda yang dimasak dengan santan dan rempah sehingga menghasilkan rasa gurih lembut.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Bengkulu</div>
+                    <div class="food-name">Gulai Pisang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLQjWfdO5R0i06CtQZsmkjBdiqaA8FKU8vAr15A4fFxQ&s=10" alt="Gulai Pisang">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sumatra" data-province="Lampung">
+            <h3 class="province-title"><span>Lampung</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Lampung" data-city="Kota Bandar Lampung" data-desc="Hidangan khas Lampung berupa ikan bakar atau goreng yang disuwir lalu dicampur sambal terasi, mangga muda, atau tempoyak.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Bandar Lampung</div>
+                    <div class="food-name">Seruit</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKt2TYeqFjwc273r9Qi7T_HDoqfD3CXEHtY81mkSNEGQ&s=10" alt="Seruit">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Lampung" data-city="Kota Bandar Lampung" data-desc="Sayur bersantan khas Lampung yang menggunakan sayuran lokal seperti labu, rebung, atau daun kacang dengan rasa gurih lembut.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Bandar Lampung</div>
+                    <div class="food-name">Gulai Taboh</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4GEhic3vOLg_ZHUY9XIT-DpEDspqqmeqkFCNLomCqEA&s=10" alt="Gulai Taboh">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Lampung" data-city="Kota Bandar Lampung" data-desc="Sayur khas Lampung yang terbuat dari batang pepaya muda dan santan berbumbu rempah dengan cita rasa gurih khas.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kota Bandar Lampung</div>
+                    <div class="food-name">Gabing</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKa_3ddpBbJImDZzVeZsUI-j1TRt-GXws1BQct1F1rQA&s=10" alt="Gabing">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sumatra" data-province="Bangka Belitung">
+            <h3 class="province-title"><span>Bangka Belitung</span><span class="province-sub">Sumatra</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sumatra" data-province="Bangka Belitung" data-city="Pangkalpinang" data-desc="Sayur berkuah kuning segar khas Bangka Belitung dengan sentuhan kunyit, asam, dan nanas atau terasi yang menyegarkan.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Pangkalpinang</div>
+                    <div class="food-name">Lempah Kuning</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl6ddObNmWBPr7n3IJRxZNIYFwaWhDWwUSAtQ3XYJhpQ&s=10" alt="Lempah Kuning">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Bangka Belitung" data-city="Tanjung Pandan" data-desc="Sup ikan berkuah bening atau kuning khas Bangka Belitung dengan rasa asam segar dari jeruk kunci atau nanas.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Tanjung Pandan</div>
+                    <div class="food-name">Sup Gangan</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZqbPk-PA4D_9a4DytOcjqkhFdgkP8FAetSd8EG0leQQ&s=10" alt="Sup Gangan">
+                </div>
+                <div class="kotak" data-region="Sumatra" data-province="Bangka Belitung" data-city="Kabupaten Belitung" data-desc="Gulungan tepung beras dan sagu khas Belitung yang dipotong tipis dan disiram kuah kari ikan bersantan yang gurih.">
+                    <span class="region-badge">Sumatra</span>
+                    <div class="city-name">Kabupaten Belitung</div>
+                    <div class="food-name">Berego</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSSpidBzPxlWKJmqgHKKX0YUE-JgH-lJpVo6uUO09qaQ&s=10" alt="Berego">
+                </div>
+            </div>
+        </div>
+
+        <!-- JAWA (6 Provinsi) -->
+        <div class="province-group" data-region="Jawa" data-province="DKI Jakarta">
+            <h3 class="province-title"><span>DKI Jakarta</span><span class="province-sub">Jawa</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Jawa" data-province="DKI Jakarta" data-city="Jakarta Pusat" data-desc="Kuliner khas Betawi berbahan beras ketan, telur, dan ebi yang dimasak di atas wajan kecil hingga bagian bawahnya berkerak dan harum.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Jakarta Pusat</div>
+                    <div class="food-name">Kerak Telor</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiY9Y8jnfOVck0si59flV4J82pPcgSnI8pdtp4IBaB9Q&s=10" alt="Kerak Telor">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="DKI Jakarta" data-city="Jakarta Selatan" data-desc="Soto khas Betawi dengan kuah gurih campuran santan atau susu serta isian daging sapi, jeroan, kentang, dan tomat.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Jakarta Selatan</div>
+                    <div class="food-name">Soto Betawi</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhP6UVboUFTWrGO34p3M9l7lGL4Mk_beLMU6iBR0Y0sg&s=10" alt="Soto Betawi">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="DKI Jakarta" data-city="Jakarta Utara" data-desc="Nasi pulen yang dimasak dengan santan, serai, dan daun salam khas Jakarta, disajikan bersama lauk pendamping, bihun, dan sambal kacang.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Jakarta Utara</div>
+                    <div class="food-name">Nasi Uduk</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHmmVvr91KiAShOVUUtPPIgiwQYQKmb1hAEju-xue1Nw&s=10" alt="Nasi Uduk">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Jawa" data-province="Jawa Barat">
+            <h3 class="province-title"><span>Jawa Barat</span><span class="province-sub">Jawa</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Jawa" data-province="Jawa Barat" data-city="Kota Cirebon" data-desc="Nasi putih khas Cirebon, Jawa Barat, yang dibungkus daun jati sehingga wangi dan disantap bersama aneka lauk pauk serta sambal.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Cirebon</div>
+                    <div class="food-name">Nasi Jamblang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8Kj9vV6VrP-VPT85DR-v23QIrQ8xxJ9b3KqQkw4iYsA&s=10" alt="Nasi Jamblang">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="Jawa Barat" data-city="Kabupaten Bandung" data-desc="Nasi hangat khas Sunda yang dikukus dalam daun pisang sehingga beraroma harum, disajikan bersama lalapan, sambal, dan lauk goreng.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kabupaten Bandung</div>
+                    <div class="food-name">Nasi Timbel</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLs95pZEGG4e9NsSJcM2p6qS2iuMoSgxtITwbHvIlX1Q&s=10" alt="Nasi Timbel">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="Jawa Barat" data-city="Kota Tasikmalaya" data-desc="Nasi hangat khas Tasikmalaya yang diaduk dengan oncom bakar berbumbu kencur, disajikan bersama ayam goreng, tahu, tempe, dan sambal terasi.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Tasikmalaya</div>
+                    <div class="food-name">Nasi Tutug Oncom</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfnMLTWfGwoHmG-It_gtEP8rmGxRDBnrkX_LvrdPWx3A&s=10" alt="Nasi Tutug Oncom">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Jawa" data-province="Jawa Tengah">
+            <h3 class="province-title"><span>Jawa Tengah</span><span class="province-sub">Jawa</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Jawa" data-province="Jawa Tengah" data-city="Kota Surakarta" data-desc="Nasi gurih khas Solo, Jawa Tengah, yang dimasak dengan santan dan rempah lalu disajikan dengan suwiran ayam, telur, dan areh.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Surakarta</div>
+                    <div class="food-name">Nasi Liwet</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkrPNZ7iQvJcI0uE6GYddZCnyPv0VRu2zSWjlgS7I8mg&s=10" alt="Nasi Liwet">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="Jawa Tengah" data-city="Kabupaten Banyumas" data-desc="Tempe tipis yang dibalut adonan tepung berbumbu dan daun bawang lalu digoreng setengah matang agar tetap lembut di bagian dalam.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kabupaten Banyumas</div>
+                    <div class="food-name">Tempe Mendoan</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ9fEpnKBQhTL_SfbvdeozT6v4uzfpaL_aHvlFDQrICg&s=10" alt="Tempe Mendoan">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="Jawa Tengah" data-city="Kota Surakarta" data-desc="Olahan tulang dan daging kambing khas Solo dengan kuah gulai encer berempah yang gurih dan menghangatkan.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Surakarta</div>
+                    <div class="food-name">Tengkleng</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP98DgFBrN-qw1gUYWxg-qlVWS8XBkGeWEomD-RpJ3OA&s=10" alt="Tengkleng">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Jawa" data-province="DI Yogyakarta">
+            <h3 class="province-title"><span>DI Yogyakarta</span><span class="province-sub">Jawa</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Jawa" data-province="DI Yogyakarta" data-city="Kota Yogyakarta" data-desc="Masakan nangka muda khas Yogyakarta yang dimasak lama dengan gula aren dan santan sehingga bercita rasa manis gurih serta bertekstur lembut.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Yogyakarta</div>
+                    <div class="food-name">Gudeg</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNBO7Ey9SbCqjPXKwyZWY76zpWh-uQrtv7aHUy6CFTeQ&s=10" alt="Gudeg">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="DI Yogyakarta" data-city="Kabupaten Bantul" data-desc="Sate kambing khas Bantul, Yogyakarta, yang ditusuk menggunakan jeruji sepeda dan dibakar polos dengan bumbu garam serta bawang.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kabupaten Bantul</div>
+                    <div class="food-name">Sate Klathak</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjzrTWHXyBx6HgRglpi3zBOLbVzdB7lwNDzNN6RxqFEA&s=10" alt="Sate Klathak">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="DI Yogyakarta" data-city="Kota Yogyakarta" data-desc="Mi kuning dan bihun khas Yogyakarta yang dimasak di atas tungku arang dengan kaldu ayam kampung, telur bebek, dan sayuran.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Yogyakarta</div>
+                    <div class="food-name">Bakmi Jawa</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAQLfvs-lko3JkTQBf0e_srsFLKTqxyWD1Aff2vdSGfA&s=10" alt="Bakmi Jawa">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Jawa" data-province="Jawa Timur">
+            <h3 class="province-title"><span>Jawa Timur</span><span class="province-sub">Jawa</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Jawa" data-province="Jawa Timur" data-city="Kota Surabaya" data-desc="Sup daging sapi berkuah hitam pekat khas Jawa Timur yang mendapatkan warna dan cita rasa khas dari bumbu kluwek serta rempah aromatik.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Surabaya</div>
+                    <div class="food-name">Rawon</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQguyND5lrBBdu2UCX_Vilh6K-tH11vl3J5rU_A1OzMtA&s=10" alt="Rawon">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="Jawa Timur" data-city="Kota Surabaya" data-desc="Sajian khas Surabaya berisi irisan lontong, taoge rebus, tahu goreng, lentho, dan kuah segar berbumbu petis serta bawang putih.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Surabaya</div>
+                    <div class="food-name">Lontong Balap</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWCZMfrSt50s8lb2UQ69sWNSbyxVC4XVRVHszg0w-gdw&s=10" alt="Lontong Balap">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="Jawa Timur" data-city="Kabupaten Banyuwangi" data-desc="Nasi khas Banyuwangi yang disajikan dengan aneka sayuran rebus, tahu, tempe, ikan asin, dan sambal terasi mentah pedas menyegarkan.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kabupaten Banyuwangi</div>
+                    <div class="food-name">Sego Tempong</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQouTkSZGl4LGOGxY3E4LKGlaTHjmJJdwoIsknB33Jw-w&s=10" alt="Sego Tempong">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Jawa" data-province="Banten">
+            <h3 class="province-title"><span>Banten</span><span class="province-sub">Jawa</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Jawa" data-province="Banten" data-city="Kota Serang" data-desc="Olahan ikan bandeng khas Banten yang durinya dihilangkan lalu dagingnya dibumbui rempah dan dipanggang di dalam kulitnya.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Serang</div>
+                    <div class="food-name">Sate Bandeng</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ815yUuzt1_Jtpq22e3E2TdV5glQ0jHex90pMbk2R9YQ&s=10" alt="Sate Bandeng">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="Banten" data-city="Kota Serang" data-desc="Olahan daging dan jeroan kambing khas Kesultanan Banten yang dimasak dengan kecap manis, tomat, dan rempah bercita rasa manis gurih.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kota Serang</div>
+                    <div class="food-name">Rabeg</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqcEymoWceilh20uzOgzmPsrpgJjWbfJO33q00yUm3LQ&s=10" alt="Rabeg">
+                </div>
+                <div class="kotak" data-region="Jawa" data-province="Banten" data-city="Kabupaten Serang" data-desc="Sayur bersantan khas Banten berbahan kulit melinjo dan cabai hijau yang dimasak hingga kuahnya gurih pedas.">
+                    <span class="region-badge">Jawa</span>
+                    <div class="city-name">Kabupaten Serang</div>
+                    <div class="food-name">Sambal Burog</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQljMdYYLduRM8srlOy8Z4PVaBkxJMPR8cn898axDy_bQ&s=10" alt="Sambal Burog">
+                </div>
+            </div>
+        </div>
+
+        <!-- KALIMANTAN (5 Provinsi) -->
+        <div class="province-group" data-region="Kalimantan" data-province="Kalimantan Barat">
+            <h3 class="province-title"><span>Kalimantan Barat</span><span class="province-sub">Kalimantan</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Barat" data-city="Kabupaten Mempawah" data-desc="Penganan khas Kalimantan Barat dari beras ketan berisi ebi berbumbu yang dibungkus daun pisang berbentuk segitiga lalu dibakar.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kabupaten Mempawah</div>
+                    <div class="food-name">Pengkang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs2QdUklidWF5GewK-idfC5Y03cq-Ut_gn-_7x4oehhg&s=10" alt="Pengkang">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Barat" data-city="Kota Singkawang" data-desc="Bubur khas Kalimantan Barat yang terbuat dari beras sangrai dan aneka sayuran serta dedaunan dengan rasa gurih berempah.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kota Singkawang</div>
+                    <div class="food-name">Bubur Pedas</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeDWDHdCwEPC9wgN3vWE96HFeSblgYJV7zp8XNzJ6bdw&s=10" alt="Bubur Pedas">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Barat" data-city="Kota Pontianak" data-desc="Kue tradisional khas Kalimantan Barat berbahan tepung beras dan santan yang dikukus dalam takir daun pandan dengan rasa gurih manis lembut.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kota Pontianak</div>
+                    <div class="food-name">Jorong Jorong</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6PCMxR0oaus6sjvv3B9jSCDHzuHHikKJ0S8Mm_3jBZw&s=10" alt="Jorong Jorong">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Kalimantan" data-province="Kalimantan Tengah">
+            <h3 class="province-title"><span>Kalimantan Tengah</span><span class="province-sub">Kalimantan</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Tengah" data-city="Kota Palangka Raya" data-desc="Masakan ikan sungai khas Kalimantan Tengah dengan kuah asam gurih segar dan aroma rempah khas daerah.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kota Palangka Raya</div>
+                    <div class="food-name">Juhu Singkang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTygSXTTNSN0r8t4s4O1a6PwY6xTxVju0gZa94lhAFosg&s=10" alt="Juhu Singkang">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Tengah" data-city="Kabupaten Barito Utara" data-desc="Kue ketan khas suku Dayak di Kalimantan Tengah yang dibungkus daun pisang berbentuk memanjang dan disantap dengan gula merah atau kelapa parut.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kabupaten Barito Utara</div>
+                    <div class="food-name">Kalupe</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTixPePUwuRPBl3LSZrRiVhVeAog9tZleaXDPpeuHkhDg&s=10" alt="Kalupe">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Tengah" data-city="Kota Palangka Raya" data-desc="Ikan sungai khas Kalimantan bertekstur lembut dan gurih yang dibakar dengan bumbu rempah sederhana dan disajikan bersama sambal serai.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kota Palangka Raya</div>
+                    <div class="food-name">Ikan Jelawat Bakar</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpyNcF3qe-YN5k1HLsLLI_gYgPLsqCCydx03Jm1ppjMA&s=10" alt="Ikan Jelawat Bakar">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Kalimantan" data-province="Kalimantan Selatan">
+            <h3 class="province-title"><span>Kalimantan Selatan</span><span class="province-sub">Kalimantan</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Selatan" data-city="Kota Banjarmasin" data-desc="Soto ayam khas Banjar dengan kuah bening berempah hangat seperti kayu manis, cengkeh, dan kapulaga, biasanya disajikan bersama ketupat atau lontong.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kota Banjarmasin</div>
+                    <div class="food-name">Soto Banjar</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvdHkZO8UtmDppoOzKIDS074CwmAr4I-yTv38aL5BP0A&s=10" alt="Soto Banjar">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Selatan" data-city="Kabupaten Hulu Sungai Selatan" data-desc="Ketupat khas Kandangan yang disajikan dengan ikan haruan (gabus) asap dalam kuah santan gurih berempah.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kabupaten Hulu Sungai Selatan</div>
+                    <div class="food-name">Ketupat Kandangan</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjVDUGlxJIdaJvdP5Em103sBX3TLsULrGTvDNbv3QAWw&s=10" alt="Ketupat Kandangan">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Selatan" data-city="Kota Banjarmasin" data-desc="Olahan mi khas Banjar yang disajikan setengah basah dengan suwiran ayam kampung, telur itik tambak, dan taburan seledri.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kota Banjarmasin</div>
+                    <div class="food-name">Mie Bancir</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtUFZ3C1wYKVkX4jrf2ES4wRHxy-taRN-Yl2Dy0ALlEg&s=10" alt="Mie Bancir">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Kalimantan" data-province="Kalimantan Timur">
+            <h3 class="province-title"><span>Kalimantan Timur</span><span class="province-sub">Kalimantan</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Timur" data-city="Kota Samarinda" data-desc="Olahan ayam khas Kalimantan Timur dengan bumbu merah gurih dan aromatik yang dipanggang atau dimasak hingga meresap.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kota Samarinda</div>
+                    <div class="food-name">Ayam Cicane</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQScgPxjsiD44kmaalSMU-b1gtPN5Ef3BAXRp2GqR2ALA&s=10" alt="Ayam Cicane">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Timur" data-city="Kabupaten Kutai Kartanegara" data-desc="Hidangan nasi khas Kutai, Kalimantan Timur, yang dimasak perlahan bersama minyak sayur, bawang, dan rempah hingga pulen dan gurih.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kabupaten Kutai Kartanegara</div>
+                    <div class="food-name">Nasi Bekepor</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdBiLqNroOX-_8SgX1f_IXgQfQndOTyKo5RzyzY3SfBg&s=10" alt="Nasi Bekepor">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Timur" data-city="Kabupaten Kutai Kartanegara" data-desc="Ikan haruan (gabus) bakar atau goreng khas Kutai yang disiram bumbu tumis merah pedas manis dengan aroma bawang dan asam jawa.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kabupaten Kutai Kartanegara</div>
+                    <div class="food-name">Gance Ruan</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzjxhMfuEwNra0GZUY8wb8Vu_WhN8q1E8uA-0gdxKYrw&s=10" alt="Gance Ruan">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Kalimantan" data-province="Kalimantan Utara">
+            <h3 class="province-title"><span>Kalimantan Utara</span><span class="province-sub">Kalimantan</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Utara" data-city="Kota Tarakan" data-desc="Hidangan nasi khas Kalimantan Utara yang dimasak dengan bumbu gurih dan dilengkapi lauk pauk serta sambal khas.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kota Tarakan</div>
+                    <div class="food-name">Nasi Subut</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr4JK7COHJLTGRNafK2eEKyKGCZxNnQ7DicF_q_e2Svw&s=10" alt="Nasi Subut">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Utara" data-city="Kota Tarakan" data-desc="Olahan kepiting bercangkang lunak khas Tarakan yang dimasak dengan saus lada hitam, saus tiram, atau digoreng renyah.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kota Tarakan</div>
+                    <div class="food-name">Kepiting Soka</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoueXyQ0k_hCjqf4xcC24uEdDr1Sak9ldyUaM-1cEmYg&s=10" alt="Kepiting Soka">
+                </div>
+                <div class="kotak" data-region="Kalimantan" data-province="Kalimantan Utara" data-city="Kabupaten Bulungan" data-desc="Sate berbahan daging ikan pari khas pesisir Kalimantan Utara yang dibumbui rempah gurih dan dibakar hingga harum.">
+                    <span class="region-badge">Kalimantan</span>
+                    <div class="city-name">Kabupaten Bulungan</div>
+                    <div class="food-name">Sate Ikan Pari</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3iBVQjO1UhNKfCoJnXQhRC2jbR9fA0QvCqthwHoi6wQ&s=10" alt="Sate Ikan Pari">
+                </div>
+            </div>
+        </div>
+
+        <!-- SULAWESI (6 Provinsi) -->
+        <div class="province-group" data-region="Sulawesi" data-province="Sulawesi Utara">
+            <h3 class="province-title"><span>Sulawesi Utara</span><span class="province-sub">Sulawesi</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Utara" data-city="Kota Manado" data-desc="Bubur sayuran khas Manado, Sulawesi Utara, yang kaya aneka sayuran hijau, labu, dan jagung serta disantap dengan ikan asin dan sambal.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Manado</div>
+                    <div class="food-name">Tinutuan</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZp0Mf-7t3Dxeg3ucIN4_StxtvfkP2MFmgbHQdxpDlDw&s=10" alt="Tinutuan">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Utara" data-city="Kota Bitung" data-desc="Ikan cakalang khas Minahasa yang diawetkan dengan cara diasapi hingga beraroma harum dan gurih.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Bitung</div>
+                    <div class="food-name">Cakalang Fufu</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAjOBDlY1a99VTnjt8y9EJvf1X23SnFqZ06qWtEz0tIg&s=10" alt="Cakalang Fufu">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Utara" data-city="Kota Manado" data-desc="Pisang goreng renyah khas Manado yang disantap dengan cocolan sambal ikan roa asap yang pedas gurih.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Manado</div>
+                    <div class="food-name">Pisang Goreng Sambal Roa</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Kg7rZ0LJynUC7b_M7KQD9Fj9HFFhSuXN-KIrECbggQ&s=10" alt="Pisang Goreng Sambal Roa">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sulawesi" data-province="Gorontalo">
+            <h3 class="province-title"><span>Gorontalo</span><span class="province-sub">Sulawesi</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sulawesi" data-province="Gorontalo" data-city="Kota Gorontalo" data-desc="Sup jagung khas Gorontalo yang memadukan jagung manis, suwiran ikan atau ayam, kemangi, dan perasan jeruk nipis yang segar.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Gorontalo</div>
+                    <div class="food-name">Binte Biluhuta</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvd_myuebspE5RgPdJjjmIctAI1RHkjVI-wmRuuIpEeA&s=10" alt="Binte Biluhuta">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Gorontalo" data-city="Kota Gorontalo" data-desc="Ayam bakar khas Gorontalo yang dibumbui santan dan rempah pedas gurih hingga meresap ke dalam daging.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Gorontalo</div>
+                    <div class="food-name">Ayam Iloni</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNf6ribZ-aU9ajY37smw4Yw1cbHL-ksbIg7f701718lg&s=10" alt="Ayam Iloni">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Gorontalo" data-city="Kabupaten Gorontalo" data-desc="Gorengan gurih khas Gorontalo yang terbuat dari ikan nike endemik Danau Limboto dengan bumbu bawang dan daun jeruk.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kabupaten Gorontalo</div>
+                    <div class="food-name">Perkedel Nike</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpWKkZBMIPxtHqjCPHHIs2VqC1fCX5uHF3QnK1N6e7Gw&s=10" alt="Perkedel Nike">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sulawesi" data-province="Sulawesi Tengah">
+            <h3 class="province-title"><span>Sulawesi Tengah</span><span class="province-sub">Sulawesi</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Tengah" data-city="Kota Palu" data-desc="Sup kaki atau tulang sapi khas Palu, Sulawesi Tengah, dengan kuah asam gurih segar yang kaya rempah.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Palu</div>
+                    <div class="food-name">Kaledo</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfm3CAUaQLDMg4X_ETjMUfk8CIysB3SUVGPvH-uHyIHw&s=10" alt="Kaledo">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Tengah" data-city="Kota Palu" data-desc="Masakan berkuah santan khas Sulawesi Tengah yang menggunakan daun kelor dengan cita rasa gurih ringan dan menyegarkan.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Palu</div>
+                    <div class="food-name">Uta Kelo</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDfUly1PwScFGoPF-tRv5gfyDtzKSsQfcHQPx4sjWGIw&s=10" alt="Uta Kelo">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Tengah" data-city="Kabupaten Donggala" data-desc="Hidangan daging ayam atau ikan khas Kaili, Sulawesi Tengah, yang dimasak dengan santan dan bumbu rempah khas.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kabupaten Donggala</div>
+                    <div class="food-name">Uta Dada</div>
+                    <img src="https://rumahbaca.palontaraq.id/wp-content/uploads/2024/08/Uta-Dada.jpg" alt="Uta Dada">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sulawesi" data-province="Sulawesi Barat">
+            <h3 class="province-title"><span>Sulawesi Barat</span><span class="province-sub">Sulawesi</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Barat" data-city="Kabupaten Polewali Mandar" data-desc="Camilan goreng renyah khas Sulawesi Barat dengan isian gurih yang nikmat disantap selagi hangat.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kabupaten Polewali Mandar</div>
+                    <div class="food-name">Sambusa</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpeZdb3tijR4mNgMS_A8FGmIP4KK6z2ztT_HDGlgvwNA&s=10" alt="Sambusa">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Barat" data-city="Kabupaten Majene" data-desc="Roti pipih tradisional suku Mandar berbahan singkong parut dan kelapa yang dipanggang di atas wajan tanah liat.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kabupaten Majene</div>
+                    <div class="food-name">Jepa</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLcmdYAsQF72zwTl5mTC8AtAXQPlpVhxMKFIU1C3ctCA&s=10" alt="Jepa">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Barat" data-city="Kabupaten Mamuju" data-desc="Olahan ikan halus berbumbu khas Mandar yang dibentuk dan digoreng atau dikukus sehingga bertekstur lembut dan gurih.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kabupaten Mamuju</div>
+                    <div class="food-name">Pupu Mandar</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qyJPlJDYPLxKWhdU7tpOZfhonYLIajCuXBPNLdhreQ&s=10" alt="Pupu Mandar">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sulawesi" data-province="Sulawesi Selatan">
+            <h3 class="province-title"><span>Sulawesi Selatan</span><span class="province-sub">Sulawesi</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Selatan" data-city="Kota Makassar" data-desc="Sup daging dan jeroan khas Makassar dengan kuah gurih kaya kacang tanah sangrai dan rempah pilihan, nikmat disantap bersama buras atau ketupat.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Makassar</div>
+                    <div class="food-name">Coto Makassar</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzACYhZXnyAzSAUBD1ZIlru_Vv_rOngGjOFPyvSlUgJg&s=10" alt="Coto Makassar">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Selatan" data-city="Kota Makassar" data-desc="Sup iga sapi khas Makassar dengan kuah hitam gurih dari kluwek dan rempah yang kaya rasa.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Makassar</div>
+                    <div class="food-name">Sop Konro</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_sX953T5GuJ_5D5deIp77rJOZHsBRSKyjAL_T-wSE7w&s=10" alt="Sop Konro">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Selatan" data-city="Kabupaten Pinrang" data-desc="Olahan daging ayam cincang khas Bugis yang dimasak dengan cabai rawit, bawang, dan asam mangga bercita rasa pedas segar.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kabupaten Pinrang</div>
+                    <div class="food-name">Ayam Nasu Palekko</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX200Qg0PoJQQLX_xAgARdfV4YBs-wr_FQDjdBvUntxw&s=10" alt="Ayam Nasu Palekko">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Sulawesi" data-province="Sulawesi Tenggara">
+            <h3 class="province-title"><span>Sulawesi Tenggara</span><span class="province-sub">Sulawesi</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Tenggara" data-city="Kota Kendari" data-desc="Olahan pati sagu khas Sulawesi Tenggara bertekstur kenyal bening yang disantap bersama kuah ikan atau sayur berkuah bumbu kuning.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Kendari</div>
+                    <div class="food-name">Sinonggi</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH_WOOaZxgz5JQI8iMadtU1HfknfR3p-kB4-RNwYlA_g&s=10" alt="Sinonggi">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Tenggara" data-city="Kota Baubau" data-desc="Beras ketan gurih khas Sulawesi Tenggara yang dibungkus daun janur berbentuk memanjang dan direbus hingga pulen.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kota Baubau</div>
+                    <div class="food-name">Lapa Lapa</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpK68v3YmG2JsPWzzPfm1QZHrYJtJv_C1op4pZf0jMAg&s=10" alt="Lapa Lapa">
+                </div>
+                <div class="kotak" data-region="Sulawesi" data-province="Sulawesi Tenggara" data-city="Kabupaten Muna" data-desc="Makanan tradisional khas Muna dan Buton berbahan ubi kayu kering yang dikukus lalu disajikan dengan kelapa parut dan ikan asin.">
+                    <span class="region-badge">Sulawesi</span>
+                    <div class="city-name">Kabupaten Muna</div>
+                    <div class="food-name">Kabuto</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGQB0U-EK0aWFdtZdFCiLdZ0XZCUtlh1LwcVl7X4kY6w&s=10" alt="Kabuto">
+                </div>
+            </div>
+        </div>
+
+        <!-- BALI & NUSA TENGGARA (3 Provinsi) -->
+        <div class="province-group" data-region="Bali & Nusa Tenggara" data-province="Bali">
+            <h3 class="province-title"><span>Bali</span><span class="province-sub">Bali & Nusa Tenggara</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Bali" data-city="Kabupaten Gianyar" data-desc="Ayam utuh khas Bali yang dibumbui base genep kaya rempah lalu dipanggang atau dikukus perlahan hingga dagingnya empuk dan aromatik.">
+                    <span class="region-badge">Bali & Nusa Tenggara</span>
+                    <div class="city-name">Kabupaten Gianyar</div>
+                    <div class="food-name">Ayam Betutu</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbp7WpVomgyhVsZBk3FMhmPBY3WAST1NSiAgJaculAEQ&s=10" alt="Ayam Betutu">
+                </div>
+                <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Bali" data-city="Kabupaten Gianyar" data-desc="Hidangan daging babi guling khas Bali yang dipanggang dengan bumbu rempah base genep hingga kulitnya renyah dan dagingnya gurih.">
+                    <span class="region-badge">Bali & Nusa Tenggara</span>
+                    <div class="city-name">Kabupaten Gianyar</div>
+                    <div class="food-name">Babi Guling</div>
+                    <img src="https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/142/2023/12/16/BABI-GULING-OK-1950112602.jpg" alt="Babi Guling">
+                </div>
+                <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Bali" data-city="Kabupaten Klungkung" data-desc="Sate khas Bali dari daging ikan atau ayam cincang berbumbu kelapa parut dan rempah yang dililitkan pada batang serai lalu dibakar.">
+                    <span class="region-badge">Bali & Nusa Tenggara</span>
+                    <div class="city-name">Kabupaten Klungkung</div>
+                    <div class="food-name">Sate Lilit</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvraX3uvmFkCUpV4A7eoUZDIY0gGc90KKrOE0InoSF9g&s=10" alt="Sate Lilit">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Bali & Nusa Tenggara" data-province="Nusa Tenggara Barat">
+            <h3 class="province-title"><span>Nusa Tenggara Barat</span><span class="province-sub">Bali & Nusa Tenggara</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Nusa Tenggara Barat" data-city="Kota Mataram" data-desc="Ayam kampung panggang khas Lombok yang dibumbui pasta cabai merah, bawang, terasi, dan kencur sehingga rasanya pedas, gurih, dan harum.">
+                    <span class="region-badge">Bali & Nusa Tenggara</span>
+                    <div class="city-name">Kota Mataram</div>
+                    <div class="food-name">Ayam Taliwang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThAAblQrD0UNVUYg8M7aQ6p0CgHWshJs_PnbNOjg9-XQ&s=10" alt="Ayam Taliwang">
+                </div>
+                <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Nusa Tenggara Barat" data-city="Kabupaten Lombok Timur" data-desc="Olahan ayam kampung khas Rarang, Lombok Timur, yang dimasak dengan bumbu cabai merah melimpah bercita rasa pedas gurih.">
+                    <span class="region-badge">Bali & Nusa Tenggara</span>
+                    <div class="city-name">Kabupaten Lombok Timur</div>
+                    <div class="food-name">Ayam Rarang</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7LkhzXOTQCuKcz9UtYeBnhhILmCaztrL1ztMc4dxMig&s=10" alt="Ayam Rarang">
+                </div>
+                <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Nusa Tenggara Barat" data-city="Kota Mataram" data-desc="Kangkung rebus khas Lombok yang disajikan dingin dengan sambal tomat terasi pedas segar, taoge, dan kacang tanah goreng.">
+                    <span class="region-badge">Bali & Nusa Tenggara</span>
+                    <div class="city-name">Kota Mataram</div>
+                    <div class="food-name">Plecing Kangkung</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmoB2sItm8deTOmcw_1AN0G74HhQOd8zM9pk7Qfo5M_g&s=10" alt="Plecing Kangkung">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Bali & Nusa Tenggara" data-province="Nusa Tenggara Timur">
+            <h3 class="province-title"><span>Nusa Tenggara Timur</span><span class="province-sub">Bali & Nusa Tenggara</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Nusa Tenggara Timur" data-city="Kabupaten Manggarai" data-desc="Nasi khas Manggarai, Nusa Tenggara Timur, yang dimasak di dalam ruas bambu sehingga memberikan aroma wangi alami yang khas.">
+                    <span class="region-badge">Bali & Nusa Tenggara</span>
+                    <div class="city-name">Kabupaten Manggarai</div>
+                    <div class="food-name">Kolo</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1RgW4BJUwpVTiRfnftcR27Sjd_7FzRJ38Tnsn3aPnwA&s=10" alt="Kolo">
+                </div>
+                <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Nusa Tenggara Timur" data-city="Kota Kupang" data-desc="Daging sapi asap khas Kupang yang diasapi menggunakan kayu kosambi hingga empuk dan harum, nikmat disantap bersama sambal lu'at.">
+                    <span class="region-badge">Bali & Nusa Tenggara</span>
+                    <div class="city-name">Kota Kupang</div>
+                    <div class="food-name">Sei Sapi</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKBr7h3i9OK7vLDoTJB6TJQVOJiMPO4cp66UGW8c1Ixg&s=10" alt="Sei Sapi">
+                </div>
+                <div class="kotak" data-region="Bali & Nusa Tenggara" data-province="Nusa Tenggara Timur" data-city="Kabupaten Alor" data-desc="Kue rambut khas Nusa Tenggara Timur berbahan tepung beras dan gula aren yang digoreng hingga renyah dan manis.">
+                    <span class="region-badge">Bali & Nusa Tenggara</span>
+                    <div class="city-name">Kabupaten Alor</div>
+                    <div class="food-name">Kue Jawada</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVFpB4qDpCcMmtftU_YC-4wiJfccKsGaJplV0GIjN_yg&s=10" alt="Kue Jawada">
+                </div>
+            </div>
+        </div>
+
+        <!-- MALUKU & PAPUA (8 Provinsi) -->
+        <div class="province-group" data-region="Maluku & Papua" data-province="Maluku">
+            <h3 class="province-title"><span>Maluku</span><span class="province-sub">Maluku & Papua</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Maluku & Papua" data-province="Maluku" data-city="Kota Ambon" data-desc="Hidangan tradisional khas Maluku berupa campuran suwiran ikan, sayuran, dan parutan kelapa berbumbu jeruk serta cabai yang segar.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Ambon</div>
+                    <div class="food-name">Kohu Kohu</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-Z30MDnrbsGpFvY-gnvtDsBLaNZXp3O9CXPXkDSDCA&s=10" alt="Kohu Kohu">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Maluku" data-city="Kota Ambon" data-desc="Nasi khas Ambon yang dimasak bersama kacang tolo dan kelapa parut sehingga bertekstur pulen dan gurih.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Ambon</div>
+                    <div class="food-name">Nasi Lapola</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsx4oF2vGz7Z1b-rS0zP1OMr28BGJHiYFlvUlY9IIVyw&s=10" alt="Nasi Lapola">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Maluku" data-city="Kota Ambon" data-desc="Sambal segar khas Maluku dari irisan cabai rawit, bawang merah, tomat, daun kemangi, dan perasan jeruk nipis.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Ambon</div>
+                    <div class="food-name">Sambal Colo Colo</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz_GRIByb6pluSfAxq7a_o9bwnAqh8KlQje4tkWN1-Xg&s=10" alt="Sambal Colo Colo">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Maluku & Papua" data-province="Maluku Utara">
+            <h3 class="province-title"><span>Maluku Utara</span><span class="province-sub">Maluku & Papua</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Maluku & Papua" data-province="Maluku Utara" data-city="Kota Ternate" data-desc="Hidangan ikan segar khas Maluku Utara yang diolah dengan perasan jeruk nipis, cabai, bawang merah, dan kacang sangrai bercita rasa segar gurih.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Ternate</div>
+                    <div class="food-name">Gohu Ikan</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwmzVibbEZ_xIVaGuJ0OHcJcvX2aH9mMbYOUw60slmzQ&s=10" alt="Gohu Ikan">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Maluku Utara" data-city="Kota Ternate" data-desc="Kue tradisional khas Maluku Utara bertekstur kenyal lembut dari tepung terigu, gula merah, kapulaga, dan kayu manis.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Ternate</div>
+                    <div class="food-name">Kue Asida</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Q1WU50wVHxURBDlBXnth2YW1L1baLoH9wb-w7Xh_7w&s=10" alt="Kue Asida">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Maluku Utara" data-city="Kota Tidore Kepulauan" data-desc="Kue lapis tradisional khas Tidore yang harum rempah kayu manis dan cengkeh dengan tekstur lembut dan manis.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Tidore Kepulauan</div>
+                    <div class="food-name">Lapis Tidore</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfKj0h9IWkAwF1pkqPjSh8fxY6nh2gM8gjfHmGilYqNg&s=10" alt="Lapis Tidore">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Maluku & Papua" data-province="Papua">
+            <h3 class="province-title"><span>Papua</span><span class="province-sub">Maluku & Papua</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua" data-city="Kota Jayapura" data-desc="Makanan pokok berbahan dasar sagu khas Papua dengan tekstur kenyal lengket yang nikmat dipadukan dengan kuah ikan kuning berbumbu segar.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Jayapura</div>
+                    <div class="food-name">Papeda</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjVd6r9eX3CFDT1s-BVbq3toebRJcNTX7auPNYv2VhA&s=10" alt="Papeda">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua" data-city="Kota Jayapura" data-desc="Pai susu panggang khas Papua dengan pinggiran renyah dan isian vla manis lembut beraroma vanila.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Jayapura</div>
+                    <div class="food-name">Kue Lontar</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAui7OBpCHScpr0zERmXUQyOTcaieRx8rFDjJSiY68V_Usz98pn0-TaYMBQkphmxbyJjOlASD1DyXtMRhPONpCnEJcImgcsu9dRP5o4owRNQ&s=10" alt="Kue Lontar">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua" data-city="Kota Jayapura" data-desc="Ikan laut segar berbumbu rempah kunyit, kemangi, dan cabai yang dibungkus daun talas atau pisang lalu dipanggang hingga harum.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Jayapura</div>
+                    <div class="food-name">Ikan Bungkus</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRGuf4XgM9nTr2XlQ855sh1yBkvYd1XEruS65z2uk1kg&s=10" alt="Ikan Bungkus">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Maluku & Papua" data-province="Papua Barat">
+            <h3 class="province-title"><span>Papua Barat</span><span class="province-sub">Maluku & Papua</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Barat" data-city="Kabupaten Manokwari" data-desc="Olahan ikan bakar khas Manokwari, Papua Barat, dengan sambal mentah pedas segar beraroma jeruk nipis dan rempah.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Manokwari</div>
+                    <div class="food-name">Ikan Bakar Manokwari</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRGuf4XgM9nTr2XlQ855sh1yBkvYd1XEruS65z2uk1kg&s=10" alt="Ikan Bakar Manokwari">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Barat" data-city="Kabupaten Fakfak" data-desc="Umbi keladi khas Papua Barat yang direbus hingga empuk dan disajikan sebagai sumber karbohidrat pendamping lauk ikan atau sayur.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Fakfak</div>
+                    <div class="food-name">Keladi Rebus</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVQEF4uZn9VgQm2VkWepY9n-aVIf2Bt2z1Ki-WVxWbsQ&s=10" alt="Keladi Rebus">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Barat" data-city="Kabupaten Fakfak" data-desc="Kue kering tradisional berbahan tepung sagu dan kenari khas Papua Barat dengan tekstur renyah dan aroma rempah kayu manis.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Fakfak</div>
+                    <div class="food-name">Kue Bagea</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-hHW5mR8OEKYpdMGhpE4PHvrGkb5fIS37OJv8TwtNVg&s=10" alt="Kue Bagea">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Maluku & Papua" data-province="Papua Selatan">
+            <h3 class="province-title"><span>Papua Selatan</span><span class="province-sub">Maluku & Papua</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Selatan" data-city="Kabupaten Merauke" data-desc="Olahan sagu khas Papua Selatan yang dimasak dengan kelapa parut dan bumbu tradisional sehingga menghasilkan rasa gurih yang khas.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Merauke</div>
+                    <div class="food-name">Sagu Sep</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRzCALQFzNqc--fkdRVeMCVxlrqxAptO1D0-O962hmwQ&s=10" alt="Sagu Sep">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Selatan" data-city="Kabupaten Merauke" data-desc="Olahan sagu yang dipanggang hingga berbentuk lembaran pipih kering dan renyah, sering disantap bersama teh hangat atau kuah.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Merauke</div>
+                    <div class="food-name">Sagu Lempeng</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-hHW5mR8OEKYpdMGhpE4PHvrGkb5fIS37OJv8TwtNVg&s=10" alt="Sagu Lempeng">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Selatan" data-city="Kabupaten Merauke" data-desc="Sate daging rusa khas Merauke yang dibumbui rempah manis gurih lalu dibakar hingga empuk.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Merauke</div>
+                    <div class="food-name">Sate Rusa</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4BgUMsA98B6D-i66X8RpGNz9w3--x7TfF83EBrgLRiA&s=10" alt="Sate Rusa">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Maluku & Papua" data-province="Papua Tengah">
+            <h3 class="province-title"><span>Papua Tengah</span><span class="province-sub">Maluku & Papua</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Tengah" data-city="Kabupaten Nabire" data-desc="Olahan ikan segar khas pesisir Papua yang dimasak dengan kuah kuning kunyit, rempah, dan jeruk nipis yang gurih menyegarkan.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Nabire</div>
+                    <div class="food-name">Ikan Kuah Kuning</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCnPFrGWEZbF7YCecilwRDs6rRYdk5pPyBQGrjrz_DQ&s=10" alt="Ikan Kuah Kuning">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Tengah" data-city="Kabupaten Mimika" data-desc="Kudapan berbahan tepung sagu yang disangrai tipis di atas wajan panas dan diberi isian gula merah cair sehingga renyah di luar dan manis di dalam.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Mimika</div>
+                    <div class="food-name">Martabak Sagu</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRzCALQFzNqc--fkdRVeMCVxlrqxAptO1D0-O962hmwQ&s=10" alt="Martabak Sagu">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Tengah" data-city="Kabupaten Nabire" data-desc="Olahan tepung sagu yang disangrai bersama kelapa parut dan gula merah hingga bertekstur remah gurih manis.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Nabire</div>
+                    <div class="food-name">Sinole</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKs2f6iGuj-IdzxsYbhetzSXtCnGdykmmGOkMin-RxUQ&s=10" alt="Sinole">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Maluku & Papua" data-province="Papua Pegunungan">
+            <h3 class="province-title"><span>Papua Pegunungan</span><span class="province-sub">Maluku & Papua</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Pegunungan" data-city="Kabupaten Jayawijaya" data-desc="Kuliner udang air tawar khas lembah pegunungan Papua dengan capit besar menyerupai capit kepiting yang dimasak dengan bumbu gurih.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Jayawijaya</div>
+                    <div class="food-name">Udang Selingkuh</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4iMLwnPqkSF1sgKOaHFraY9qNeYI0LmTrbgkv2IEsAg&s=10" alt="Udang Selingkuh">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Pegunungan" data-city="Kabupaten Jayawijaya" data-desc="Kuliner tradisional Papua berbahan ulat sagu yang ditusuk dan dibakar di atas bara api dengan cita rasa gurih.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Jayawijaya</div>
+                    <div class="food-name">Sate Ulat Sagu</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqypCCH7QbI0SBKuwhVwgKe02ZwAzn-uYrBqsI63FVMA&s=10" alt="Sate Ulat Sagu">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Pegunungan" data-city="Kabupaten Jayawijaya" data-desc="Olahan umbi keladi kukus khas pegunungan Papua yang ditumbuk halus dan disajikan bersama lauk serta sayuran.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Jayawijaya</div>
+                    <div class="food-name">Keladi Tumbuk</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKs2f6iGuj-IdzxsYbhetzSXtCnGdykmmGOkMin-RxUQ&s=10" alt="Keladi Tumbuk">
+                </div>
+            </div>
+        </div>
+
+        <div class="province-group" data-region="Maluku & Papua" data-province="Papua Barat Daya">
+            <h3 class="province-title"><span>Papua Barat Daya</span><span class="province-sub">Maluku & Papua</span></h3>
+            <div class="grid-container">
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Barat Daya" data-city="Kota Sorong" data-desc="Hidangan tradisional khas Sorong dan Raja Ampat dari nasi atau sagu yang dicampur ikan teri goreng, daun talas, dan kelapa parut.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Sorong</div>
+                    <div class="food-name">Aunu Senebre</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRT5Zk-20H-QF5saP97dhCCWzv4TDqYTFw1wanpwLq2wQ&s=10" alt="Aunu Senebre">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Barat Daya" data-city="Kota Sorong" data-desc="Tumis tunas tebu telur (terubuk) khas Sorong yang dimasak dengan bumbu bawang, cabai, dan ikan teri bertekstur renyah lembut.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kota Sorong</div>
+                    <div class="food-name">Sayur Lilin</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-Z30MDnrbsGpFvY-gnvtDsBLaNZXp3O9CXPXkDSDCA&s=10" alt="Sayur Lilin">
+                </div>
+                <div class="kotak" data-region="Maluku & Papua" data-province="Papua Barat Daya" data-city="Kabupaten Raja Ampat" data-desc="Hidangan tradisional Raja Ampat berupa campuran keladi, pisang, dan ubi yang dikukus atau direbus dengan santan kelapa gurih.">
+                    <span class="region-badge">Maluku & Papua</span>
+                    <div class="city-name">Kabupaten Raja Ampat</div>
+                    <div class="food-name">Tagas-tagas</div>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVQEF4uZn9VgQm2VkWepY9n-aVIf2Bt2z1Ki-WVxWbsQ&s=10" alt="Tagas-tagas">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="no-results" id="noResults">
+        Maaf, makanan, kota, atau provinsi yang dicari tidak ditemukan.
+    </div>
+
+    <!-- Modal Popup Detail Makanan -->
+    <div class="modal-backdrop" id="foodModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-card">
+            <div class="modal-image-wrap">
+                <img id="modalImage" src="" alt="">
+                <button type="button" class="modal-close" id="closeModalBtn" aria-label="Tutup modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-meta">
+                    <span class="modal-region-tag" id="modalRegion"></span>
+                    <span class="modal-province-tag" id="modalProvince"></span>
+                </div>
+                <p class="modal-city-line" id="modalCity"></p>
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-desc" id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const allCards = document.querySelectorAll('.kotak');
+        const rekomendasiSection = document.getElementById('rekomendasiSection');
+        const rekomendasiCards = document.querySelectorAll('#rekomendasiGrid .kotak');
+        const rekomendasiLabel = document.getElementById('rekomendasiLabel');
+        const provinceCards = document.querySelectorAll('#semuaMakananSection .kotak');
+        const provinceGroups = document.querySelectorAll('.province-group');
+        const catButtons = document.querySelectorAll('.cat-btn');
+        const homeLink = document.getElementById('homeLink');
+        const noResults = document.getElementById('noResults');
+        const totalVisibleLabel = document.getElementById('totalVisibleLabel');
+
+        const modal = document.getElementById('foodModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalRegion = document.getElementById('modalRegion');
+        const modalProvince = document.getElementById('modalProvince');
+        const modalCity = document.getElementById('modalCity');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        let activeRegion = 'all';
+
+        function cardMatches(card, keyword) {
+            const region = (card.dataset.region || '').toLowerCase();
+            const province = (card.dataset.province || '').toLowerCase();
+            const city = (card.dataset.city || '').toLowerCase();
+            const food = (card.querySelector('.food-name')?.textContent || '').toLowerCase();
+
+            const matchesRegion = activeRegion === 'all' || region === activeRegion.toLowerCase();
+            const matchesSearch =
+                !keyword ||
+                region.includes(keyword) ||
+                province.includes(keyword) ||
+                city.includes(keyword) ||
+                food.includes(keyword);
+
+            return matchesRegion && matchesSearch;
+        }
+
+        function filterCards() {
+            const keyword = searchInput.value.toLowerCase().trim();
+            let visibleRekomendasi = 0;
+            let visibleProvinceCards = 0;
+
+            rekomendasiCards.forEach(card => {
+                if (cardMatches(card, keyword)) {
+                    card.style.display = 'flex';
+                    visibleRekomendasi++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            rekomendasiSection.style.display = visibleRekomendasi > 0 ? 'block' : 'none';
+            rekomendasiLabel.textContent = `${visibleRekomendasi} hidangan unggulan`;
+
+            provinceCards.forEach(card => {
+                if (cardMatches(card, keyword)) {
+                    card.style.display = 'flex';
+                    visibleProvinceCards++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            let visibleProvinceGroups = 0;
+            provinceGroups.forEach(group => {
+                const visibleInProvince = group.querySelectorAll('.kotak[style="display: flex;"]').length;
+                if (visibleInProvince > 0) {
+                    group.style.display = 'block';
+                    visibleProvinceGroups++;
+                } else {
+                    group.style.display = 'none';
+                }
+            });
+
+            noResults.style.display = visibleProvinceCards === 0 ? 'block' : 'none';
+            totalVisibleLabel.textContent = `Menampilkan ${visibleProvinceCards} makanan dari ${visibleProvinceGroups} provinsi`;
+        }
+
+        function openFoodModal(card) {
+            const region = card.dataset.region || '';
+            const province = card.dataset.province || '';
+            const city = card.dataset.city || '';
+            const food = card.querySelector('.food-name')?.textContent.trim() || '';
+            const desc = card.dataset.desc || 'Kuliner tradisional khas Indonesia dengan cita rasa daerah yang autentik.';
+            const imgEl = card.querySelector('img');
+
+            modalRegion.textContent = `Kategori: ${region}`;
+            modalProvince.textContent = `Provinsi: ${province}`;
+            modalCity.textContent = `Asal Kota/Daerah: ${city}`;
+            modalTitle.textContent = food;
+            modalDesc.textContent = desc;
+            modalImage.src = imgEl ? imgEl.src : '';
+            modalImage.alt = food;
+
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeFoodModal() {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        allCards.forEach(card => {
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+
+            card.addEventListener('click', () => openFoodModal(card));
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openFoodModal(card);
+                }
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeFoodModal);
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeFoodModal();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.classList.contains('open')) {
+                closeFoodModal();
+            }
+        });
+
+        searchInput.addEventListener('input', filterCards);
+
+        catButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                catButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                activeRegion = btn.dataset.region;
+                filterCards();
+            });
+        });
+
+        homeLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            closeFoodModal();
+            searchInput.value = '';
+            activeRegion = 'all';
+            catButtons.forEach(b => b.classList.remove('active'));
+            document.querySelector('.cat-btn[data-region="all"]').classList.add('active');
+            filterCards();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
+
