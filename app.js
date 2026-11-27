@@ -1,0 +1,9 @@
+let nav = 'home', reg = 'all';
+const filter = () => {
+    const q = search.value.toLowerCase(), all = nav !== 'home' || q !== '';
+    catalogSec.classList.toggle('d-none', nav === 'about'); aboutSec.classList.toggle('d-none', nav !== 'about'); rekSec.classList.toggle('d-none', all); provSec.classList.toggle('d-none', !all); regionNav.classList.toggle('d-none', !all || nav === 'about'); resepInfo.classList.toggle('d-none', nav !== 'resep');
+    document.querySelectorAll('#provSec .col').forEach(c => { const k = c.firstElementChild; c.classList.toggle('d-none', !((nav === 'semua' || nav === 'resep' || nav === 'home' || k.dataset.type === nav) && (reg === 'all' || k.dataset.loc.includes(reg)) && (k.innerText + k.dataset.loc).toLowerCase().includes(q))); });
+    document.querySelectorAll('#provSec .prov-group').forEach(g => g.classList.toggle('d-none', !g.querySelector('.col:not(.d-none)')));
+};
+document.onclick = e => { const t = e.target, k = t.closest('.kotak'); if (t.dataset.nav) { nav = t.dataset.nav; document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b === t)); filter(); } if (t.dataset.reg) { reg = t.dataset.reg; document.querySelectorAll('.reg-btn').forEach(b => b.classList.toggle('active', b === t)); filter(); } if (k) { mImg.src = k.querySelector('img').src; mTag.textContent = k.dataset.loc; mStar.textContent = k.dataset.star; mTitle.textContent = k.querySelector('.nama-makanan').textContent; mDesc.textContent = k.dataset.desc; mBahan.textContent = k.dataset.bahan; mCara.textContent = k.dataset.cara; resepWrap.classList.toggle('d-none', nav !== 'resep'); resepBox.classList.add('d-none'); new bootstrap.Modal(foodModal).show(); } };
+search.oninput = filter;

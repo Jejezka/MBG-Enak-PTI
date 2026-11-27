@@ -1,0 +1,126 @@
+body {
+    background-color: #FFF8EE;
+    color: #3E2723;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-custom {
+    background-color: #FFFFFF;
+    border: 1px solid #F0DFC8;
+}
+
+.nav-btn, .reg-btn {
+    background-color: #FFF3E2;
+    color: #375d3e;
+    border: none;
+}
+
+.nav-btn.active, .reg-btn.active, .btn-warm {
+    background-color: #E05A2B;
+    color: #FFFFFF;
+}
+ 
+.hero-box {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FFE6C7 0%, #FFD0A1 55%, #FFC085 100%);
+    color: #FFFFFF;
+    font-family: 'playfair display', serif;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+}
+
+.hero-desc {
+    background-color: rgba(62, 39, 35, 0.745);
+}
+
+.logo-box {
+    background-color: rgba(255, 255, 255, 0.92);
+    width: 110px;
+    height: 110px;
+}
+
+.prov-title {
+    border-bottom: 2px solid #E05A2B;
+    color: #000000;
+}
+
+.kotak {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #5D4037;
+    color: #FFFFFF;
+    transition: transform 0.2s;
+}
+
+.kotak:hover {
+    transform: translateY(-4px);
+}
+
+.kotak img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kotak::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(25, 14, 10, 0.9) 18%, rgba(25, 14, 10, 0.15) 75%);
+}
+
+.kotak-info {
+    position: relative;
+    z-index: 2;
+}
+
+.kotak-info .badge {
+    background-color: #E05A2B;
+}
+
+.bintang-text {
+    display: block !important;
+    color: #FFD166;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+#mStar {
+    color: #E05A2B;
+    font-size: 1rem;
+}
+
+.info-resep, #resepBox, .team-card {
+    background-color: #FFFFFF;
+    border: 1px solid #F0DFC8;
+}
+
+.team-img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #3E2723;
+    color: #FFF8EE;
+}
+
+.footer-line {
+    border-bottom: 1px solid rgba(255, 248, 238, 0.2);
+}
