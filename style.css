@@ -2,9 +2,9 @@
    0. PENGATURAN DASAR HALAMAN (FONT & BACKGROUND UTAMA)
    ========================================================= */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Jenis font utama seluruh web */
-    background-color: #FFF8EE; /* Warna background dasar halaman (krem hangat) */
-    color: #3D2B1F;            /* Warna teks default */
+    font-family: 'Playfair Display', serif; /* Font utama halaman */
+    background-color: #FFF8EE;             /* Warna background dasar halaman (krem hangat) */
+    color: #3D2B1F;                        /* Warna teks default */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -21,8 +21,9 @@ body {
 
 /* Tombol menu & tombol daerah saat normal */
 .nav-btn, .reg-btn {
-    background-color: #FDECE2; /* Warna background tombol normal */
-    color: #8C2D19;            /* Warna tulisan tombol normal */
+    font-family: 'Playfair Display', serif; /* Font tombol menu & daerah */
+    background-color: #FDECE2;             /* Warna background tombol normal */
+    color: #8C2D19;                        /* Warna tulisan tombol normal */
     border: none;
     transition: 0.2s;
 }
@@ -36,9 +37,10 @@ body {
 
 /* Kotak input pencarian */
 .search-box {
-    background-color: #FFF8EE; /* Warna latar kolom search */
-    border: 1px solid #E05A2B; /* Warna garis tepi kolom search */
-    color: #3D2B1F;            /* Warna teks ketikan */
+    font-family: 'Playfair Display', serif; /* Font teks di kotak search */
+    background-color: #FFF8EE;             /* Warna latar kolom search */
+    border: 1px solid #E05A2B;             /* Warna garis tepi kolom search */
+    color: #3D2B1F;                        /* Warna teks ketikan */
 }
 
 /* =========================================================
@@ -47,8 +49,7 @@ body {
 .hero-box {
     position: relative;
     overflow: hidden;
-    background-color: #ffc085
-; /* Warna cadangan jika gambar banner gagal dimuat */
+    background-color: #FFC085 /* Warna cadangan jika gambar banner gagal dimuat */
 }
 
 /* Gambar latar banner */
@@ -64,49 +65,60 @@ body {
 
 /* Judul besar "Jelajah Rasa" */
 .judul-utama {
-    font-family: 'Georgia', serif; /* Font khusus judul utama */
-    color: #FFE4B5;                /* Warna tulisan judul utama (kuning emas lembut) */
+    font-family: 'Playfair Display', serif; /* Font judul utama */
+    color: #8C2D19;                        /* Warna tulisan judul utama (kuning emas lembut) */
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Bayangan hitam di belakang teks judul */
 }
 
 /* Kotak & teks deskripsi di bawah judul */
 .hero-desc, .teks-deskripsi {
-    background-color: rgba(43, 24, 16, 0.72); /* Warna kotak deskripsi + opacity (0.72) */
-    color: #FFF8EE;                           /* Warna tulisan deskripsi */
-    font-size: 0.95rem;
+    font-family: 'Playfair Display', serif;
+    background-color: rgba(43, 24, 16, 0.72);
+    color: #FFF8EE;
+    font-size: clamp(1rem, 2.5vw, 1.35rem); /* Ukuran huruf otomatis menyesuaikan layar */
+    width: 100%;                            /* Mengikuti lebar wadah */
+    max-width: 800px;                       /* Maksimal 800px di layar besar */
+    height: auto;
+    padding: 15px;
+    border-radius: 8px;
 }
-
+/* rekomendasi makanan */
+.prov-title {
+    font-family: 'Playfair Display', serif;
+    color: #8C2D19;
+    border-bottom: 2px solid #E05A2B;
+}
 /* =========================================================
    3. JUDUL KATEGORI & KOTAK INFO RESEP
    ========================================================= */
 .prov-title {
-    font-family: 'Georgia', serif; /* Font judul kategori (Rekomendasi, Sumatra, dll) */
-    color: #8C2D19;                /* Warna tulisan judul kategori */
-    border-bottom: 2px solid #E05A2B; /* Garis bawah judul kategori */
+    font-family: 'Playfair Display', serif; /* Font judul kategori (Rekomendasi, Sumatra, dll) */
+    color: #8C2D19;                        /* Warna tulisan judul kategori */
+    border-bottom: 2px solid #E05A2B;      /* Garis bawah judul kategori */
 }
 
-/* Kotak petunjuk kuning saat tab "Resep" dibuka */
+/* Kotak petunjuk saat tab "Resep" dibuka */
 .info-resep {
-    background-color: #FDECE2; /* Warna background kotak petunjuk */
-    color: #8C2D19;            /* Warna teks kotak petunjuk */
+    font-family: 'Playfair Display', serif; /* Font teks petunjuk resep */
+    background-color: #FDECE2;             /* Warna background kotak petunjuk */
+    color: #8C2D19;                        /* Warna teks kotak petunjuk */
     border-left: 4px solid #E05A2B;
 }
 
 /* =========================================================
-   4. KARTU MAKANAN (.kotak) & EFEK HITAM-HITAM
+   4. KARTU MAKANAN (.kotak) & FOTO MAKANAN
    ========================================================= */
 .kotak {
     position: relative;
-    height: 250px;             /* Tinggi kartu makanan */
+    height: 250px;
     overflow: hidden;
     cursor: pointer;
-    background-color: #2B1810; /* Warna dasar kartu di belakang foto */
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background-color: transparent;
+    transition: transform 0.25s ease;
 }
 
 .kotak:hover {
-    transform: translateY(-4px); /* Efek kartu naik sedikit saat disentuh mouse */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
 }
 
 /* Foto makanan di dalam kartu */
@@ -116,86 +128,78 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.9; /* OPACITY FOTO MAKANAN: turunkan (misal 0.7) jika ingin foto agak gelap/pudar */
+    opacity: 1; /* Foto terang penuh (1 = 100%) */
     z-index: 1;
 }
 
-/* EFEK HITAM-HITAM (GRADASI GELAP) DI ATAS FOTO MAKANAN */
+/* Bayangan tipis di bawah foto supaya tulisan tetap terbaca */
 .kotak::after {
     content: "";
     position: absolute;
     inset: 0;
-    /* Ubah angka terakhir di rgba(0, 0, 0, ANGKA) untuk mengatur kepekatan hitamnya:
-       - 0.85 = hitam pekat di bagian bawah (belakang tulisan)
-       - 0.15 = hitam tipis di bagian atas */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 0.15) 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 10%, rgba(0, 0, 0, 0) 60%);
     z-index: 2;
 }
 
-/* Wadah teks di dalam kartu makanan */
 .kotak-info {
     position: relative;
-    z-index: 3; /* Supaya tulisan berada di atas efek hitam-hitam */
+    z-index: 3;
 }
 
-/* Label wilayah (Sumatra, Jawa, dll) */
 .kotak .badge {
-    background-color: #E05A2B; /* Warna kotak badge wilayah */
-    color: #FFFFFF;            /* Warna teks badge wilayah */
+    font-family: 'Playfair Display', serif;
+    background-color: #E05A2B;
+    color: #FFFFFF;
 }
 
-/* Teks nama provinsi & jenis makanan (contoh: Aceh • Ringan) */
 .kota-text {
-    color: #FCD5B5; /* Warna teks provinsi */
+    font-family: 'Playfair Display', serif;
+    color: #FCD5B5;
 }
 
-/* Judul nama makanan di kartu */
 .nama-makanan {
-    font-family: 'Georgia', serif; /* Font nama makanan di kartu */
-    color: #FFFFFF;                /* Warna nama makanan */
+    font-family: 'Playfair Display', serif;
+    color: #FFFFFF;
 }
 
-/* Warna bintang rating (★★★★★) */
 .bintang-text {
-    color: #FFD166; /* Warna kuning emas bintang */
+    color: #FFD166;
 }
 
 /* =========================================================
    5. POPUP DETAIL MAKANAN & DESKRIPSI (#foodModal)
    ========================================================= */
 #foodModal .modal-content {
-    background-color: #FFF8EE; /* Warna latar kotak popup deskripsi */
-    font-family: 'Segoe UI', sans-serif; /* Font utama di dalam popup */
+    font-family: 'Playfair Display', serif;
+    background-color: #FFF8EE;
     border: none;
 }
 
-/* Teks wilayah di atas judul popup (Sumatra • Sumatra Barat) */
 #mTag {
+    font-family: 'Playfair Display', serif;
     color: #E05A2B;
 }
 
-/* Bintang rating di dalam popup */
 #mStar {
     color: #F59E0B;
 }
 
-/* Judul nama makanan di dalam popup */
 #mTitle {
-    font-family: 'Georgia', serif; /* Font judul makanan di popup */
-    color: #8C2D19;                /* Warna judul makanan di popup */
+    font-family: 'Playfair Display', serif;
+    color: #8C2D19;
 }
 
-/* Paragraf deskripsi makanan di dalam popup */
 #mDesc {
-    color: #4A3B32;     /* Warna teks deskripsi makanan */
-    font-size: 0.95rem; /* Ukuran huruf deskripsi */
+    font-family: 'Playfair Display', serif;
+    color: #4A3B32;
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 
-/* Tombol "Tampilkan Resep" */
 .btn-warm {
-    background-color: #E05A2B; /* Warna tombol resep */
-    color: #FFFFFF;            /* Warna tulisan tombol resep */
+    font-family: 'Playfair Display', serif;
+    background-color: #E05A2B;
+    color: #FFFFFF;
     border: none;
 }
 
@@ -204,10 +208,10 @@ body {
     color: #FFFFFF;
 }
 
-/* Kotak rincian Bahan & Cara Membuat */
 #resepBox {
-    background-color: #FDECE2; /* Warna latar kotak resep */
-    color: #3D2B1F;            /* Warna tulisan bahan & cara membuat */
+    font-family: 'Playfair Display', serif;
+    background-color: #FDECE2;
+    color: #3D2B1F;
     border: 1px solid #F0D9C6;
 }
 
@@ -215,23 +219,46 @@ body {
    6. HALAMAN ABOUT US (KARTU TIM) & FOOTER
    ========================================================= */
 .team-card {
-    background-color: #FFFFFF; /* Warna latar kartu anggota tim */
+    font-family: 'Playfair Display', serif;
+    background-color: #FFFFFF;
     border: 1px solid #F0D9C6;
-    color: #3D2B1F;            /* Warna tulisan nama & peran tim */
+    color: #3D2B1F;
 }
 
 .team-img {
     width: 110px;
     height: 110px;
     object-fit: cover;
-    border: 3px solid #E05A2B; /* Warna bingkai foto profil tim */
+    border: 3px solid #E05A2B;
 }
 
 footer {
-    background-color: #2B1810; /* Warna background footer bawah */
-    color: #FDECE2;            /* Warna teks footer bawah */
+    font-family: 'Playfair Display', serif;
+    background-color: #2B1810; /* Background gelap bagian bawah footer */
+    color: #FDECE2;
 }
 
 .footer-line {
-    border-bottom: 1px solid rgba(253, 236, 226, 0.25); /* Garis pemisah tipis di footer */
+    border-bottom: 1px solid rgba(253, 236, 226, 0.25);
+}
+
+/* Tombol LinkedIn di kartu tim */
+.btn-linkedin {
+    background-color: #FDECE2;
+    color: #8C2D19;
+    border: 1px solid #F0D9C6;
+    transition: 0.2s;
+}
+
+.btn-linkedin:hover {
+    background-color: #0A66C2; /* Warna biru khas LinkedIn saat diarahkan kursor */
+    color: #FFFFFF;
+    border-color: #0A66C2;
+}
+
+.team-img {
+    width: 236px;
+    height: 220px;
+    object-fit: cover;
+    border: 3px solid #E05A2B;
 }
