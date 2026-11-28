@@ -82,7 +82,7 @@ body {
     font-family: 'Playfair Display', serif;
     background-color: rgba(43, 24, 16, 0.72);
     color: #FFF8EE;
-    font-size: clamp(1rem, 2.5vw, 1.35rem); /* Ukuran huruf otomatis menyesuaikan layar */
+    font-size: 20px; /* Ukuran huruf otomatis menyesuaikan layar */
     width: 100%;                            /* Mengikuti lebar wadah */
     max-width: 800px;                       /* Maksimal 800px di layar besar */
     height: auto;
