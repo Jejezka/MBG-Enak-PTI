@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jelajah Rasa - Kuliner Nusantara 38 Provinsi</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- CSS Kustom -->
+    <title>Jelajah Rasa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Taruh link Google Fonts di sini -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -58,7 +58,8 @@
 
         <div class="row align-items-center position-relative" style="z-index: 2;">
             <div class="col-md-8">
-                <h1 class="display-5 fw-bold mb-3 judul-utama">Jelajah Rasa</h1>
+                <h1 class="display-5 fw-bold judul-utama">Jelajah Rasa</h1>
+               
                 <p class="hero-desc p-3 rounded-3 mb-0 teks-deskripsi">Jelajah Rasa adalah website yang memperkenalkan berbagai makanan khas dari 38 provinsi di Indonesia untuk mengenal keberagaman cita rasa dan kekayaan kuliner Nusantara</p>
             </div>
             <div class="col-md-4 text-md-end mt-3 mt-md-0">
@@ -73,8 +74,12 @@
     ========================================================= -->
     <main class="container mb-5">
         <div id="catalogSec">
+            
 
             <!-- Petunjuk khusus saat menu Resep dibuka -->
+             <div id="emptyMsg" class="text-center py-5 d-none">
+                <p class="fs-5 fw-bold mb-0">Maaf makanan yang kamu cari tidak ada, admin tepar</p>
+            </div>
             <div id="resepInfo" class="info-resep rounded-3 p-3 mb-4 d-none">
                 Klik salah satu kartu makanan di bawah, lalu tekan tombol <strong>Tampilkan Resep</strong>.
             </div>
@@ -88,7 +93,7 @@
                         <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                              data-type="berat"
                              data-loc="Sumatra • Sumatra Barat"
-                             data-star="★★★★★"
+                             data-star="⭐⭐⭐⭐⭐"
                              data-desc="Olahan daging sapi khas Minangkabau yang dimasak perlahan dengan santan kental dan racikan rempah kaya aroma hingga bumbunya meresap pekat."
                              data-bahan="Daging sapi, santan kental, lengkuas, serai, cabai merah, bawang merah, bawang putih, kunyit, jahe."
                              data-cara="Haluskan bumbu, masak bersama santan dan daun rempah hingga mendidih. Masukkan daging, aduk perlahan dengan api kecil hingga mengering.">
@@ -97,7 +102,7 @@
                                 <span class="badge rounded-pill mb-1">Sumatra</span>
                                 <small class="d-block fw-semibold kota-text">Sumatra Barat</small>
                                 <h4 class="fs-5 fw-bold mb-0 nama-makanan">Rendang</h4>
-                                <small class="bintang-text">★★★★★</small>
+                                <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                             </div>
                         </div>
                     </div>
@@ -106,7 +111,7 @@
                         <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                              data-type="berat"
                              data-loc="Jawa • DI Yogyakarta"
-                             data-star="★★★★★"
+                             data-star="⭐⭐⭐⭐⭐"
                              data-desc="Masakan nangka muda khas Yogyakarta yang dimasak lama dengan gula aren dan santan sehingga bercita rasa manis gurih serta bertekstur lembut."
                              data-bahan="Nangka muda, santan, gula aren, daun jati, bawang merah, bawang putih, ketumbar, kemiri, lengkuas."
                              data-cara="Rebus nangka muda bersama bumbu halus, gula aren, santan, dan daun jati dengan api kecil hingga empuk dan kuah menyusut.">
@@ -115,7 +120,7 @@
                                 <span class="badge rounded-pill mb-1">Jawa</span>
                                 <small class="d-block fw-semibold kota-text">DI Yogyakarta</small>
                                 <h4 class="fs-5 fw-bold mb-0 nama-makanan">Gudeg</h4>
-                                <small class="bintang-text">★★★★★</small>
+                                <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                             </div>
                         </div>
                     </div>
@@ -124,7 +129,7 @@
                         <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                              data-type="berat"
                              data-loc="Kalimantan • Kalimantan Selatan"
-                             data-star="★★★★★"
+                             data-star="⭐⭐⭐⭐⭐"
                              data-desc="Soto ayam khas Banjar dengan kuah bening berempah hangat seperti kayu manis, cengkeh, dan kapulaga, biasanya disajikan bersama ketupat atau lontong."
                              data-bahan="Ayam kampung, ketupat, perkedel kentang, telur rebus, kayu manis, cengkih, kapulaga, bawang putih, susu cair."
                              data-cara="Tumis bumbu halus bersama rempah kering, masukkan ke kaldu rebusan ayam. Sajikan suwiran ayam dengan kuah, perkedel, dan ketupat.">
@@ -133,7 +138,7 @@
                                 <span class="badge rounded-pill mb-1">Kalimantan</span>
                                 <small class="d-block fw-semibold kota-text">Kalimantan Selatan</small>
                                 <h4 class="fs-5 fw-bold mb-0 nama-makanan">Soto Banjar</h4>
-                                <small class="bintang-text">★★★★★</small>
+                                <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                             </div>
                         </div>
                     </div>
@@ -142,7 +147,7 @@
                         <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                              data-type="berat"
                              data-loc="Sulawesi • Sulawesi Selatan"
-                             data-star="★★★★★"
+                             data-star="⭐⭐⭐⭐⭐"
                              data-desc="Sup daging dan jeroan khas Makassar dengan kuah gurih kaya kacang tanah sangrai dan rempah pilihan, nikmat disantap bersama buras atau ketupat."
                              data-bahan="Daging sapi, kacang tanah sangrai halus, serai, lengkuas, ketumbar, jintan, bawang putih, air tajin."
                              data-cara="Rebus daging bersama bumbu rempah dan kacang tanah halus dalam air tajin hingga empuk. Sajikan hangat dengan jeruk nipis dan buras.">
@@ -151,7 +156,7 @@
                                 <span class="badge rounded-pill mb-1">Sulawesi</span>
                                 <small class="d-block fw-semibold kota-text">Sulawesi Selatan</small>
                                 <h4 class="fs-5 fw-bold mb-0 nama-makanan">Coto Makassar</h4>
-                                <small class="bintang-text">★★★★★</small>
+                                <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                             </div>
                         </div>
                     </div>
@@ -160,7 +165,7 @@
                         <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                              data-type="ringan"
                              data-loc="Sumatra • Sumatra Selatan"
-                             data-star="★★★★★"
+                             data-star="⭐⭐⭐⭐⭐"
                              data-desc="Kuliner ikonik Palembang berbahan dasar ikan giling dan sagu yang disajikan bersama kuah cuko bercita rasa asam, manis, dan pedas."
                              data-bahan="Ikan tenggiri giling, tepung sagu, telur, bawang putih, gula aren, cabai rawit, asam jawa, mentimun."
                              data-cara="Uleni ikan giling dengan air es, bawang putih, dan sagu. Bentuk dan rebus hingga mengapung, goreng sebentar lalu sajikan dengan cuko.">
@@ -169,7 +174,7 @@
                                 <span class="badge rounded-pill mb-1">Sumatra</span>
                                 <small class="d-block fw-semibold kota-text">Sumatra Selatan</small>
                                 <h4 class="fs-5 fw-bold mb-0 nama-makanan">Pempek</h4>
-                                <small class="bintang-text">★★★★★</small>
+                                <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                             </div>
                         </div>
                     </div>
@@ -178,7 +183,7 @@
                         <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                              data-type="berat"
                              data-loc="Nusa Tenggara • Nusa Tenggara Barat"
-                             data-star="★★★★★"
+                             data-star="⭐⭐⭐⭐⭐"
                              data-desc="Ayam kampung panggang khas Lombok yang dibumbui pasta cabai merah, bawang, terasi, dan kencur sehingga rasanya pedas, gurih, dan harum."
                              data-bahan="Ayam kampung muda, cabai merah keriting, cabai rawit, bawang merah, bawang putih, terasi bakar, santan."
                              data-cara="Bakar ayam setengah matang, lumuri bumbu halus yang sudah ditumis dengan santan, lalu bakar kembali hingga bumbu meresap.">
@@ -187,7 +192,7 @@
                                 <span class="badge rounded-pill mb-1">Nusa Tenggara</span>
                                 <small class="d-block fw-semibold kota-text">Nusa Tenggara Barat</small>
                                 <h4 class="fs-5 fw-bold mb-0 nama-makanan">Ayam Taliwang</h4>
-                                <small class="bintang-text">★★★★★</small>
+                                <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                             </div>
                         </div>
                     </div>
@@ -197,7 +202,7 @@
 
             <!-- BAGIAN B: SEMUA MAKANAN PER DAERAH (38 PROVINSI × 2 MAKANAN = 76) -->
             <div id="provSec" class="d-none">
-                <h2 class="h4 fw-bold mb-4">Semua Makanan per Daerah (38 Provinsi • Berat &amp; Ringan)</h2>
+                <h2 class="h4 fw-bold mb-4">Semua Makanan per Daerah (38 Provinsi)</h2>
 
                 <!-- =================================================
                      DAERAH 1: SUMATRA (10 PROVINSI = 20 MAKANAN)
@@ -211,7 +216,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sumatra • Aceh"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Mi tebal khas Aceh dengan bumbu rempah yang kuat, dapat dimasak goreng atau berkuah serta dipadukan dengan daging sapi, ayam, atau makanan laut."
                                  data-bahan="Mi kuning basah, daging sapi, kaldu sapi, cabai merah, bawang putih, kapulaga, jintan, kunyit, kecap manis."
                                  data-cara="Tumis bumbu halus hingga harum, masukkan daging dan air kaldu. Tambahkan mi kuning, tauge, kol, dan kecap, masak hingga mengental.">
@@ -220,7 +225,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Aceh • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Mie Aceh</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +234,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Aceh"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue tradisional Aceh berbahan tepung ketan dan pisang yang dibungkus daun pisang muda dengan isian srikaya manis lalu dikukus."
                                  data-bahan="Tepung ketan, pisang raja halus, santan kental, telur, gula pasir, daun pandan, daun pisang muda."
                                  data-cara="Uleni tepung ketan dengan pisang halus dan santan, pipihkan di atas daun pisang, isi adonan srikaya lalu gulung dan kukus.">
@@ -238,7 +243,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Aceh • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Timphan</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +252,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Sumatra Utara"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Kue tradisional khas Medan dengan tekstur berserat dan kenyal serta aroma harum daun jeruk dan pandan yang khas."
                                  data-bahan="Tepung tapioka, santan, telur, gula pasir, ragi instan, serai, daun jeruk, kunyit bubuk."
                                  data-cara="Rebus santan dengan serai dan daun jeruk, campurkan ke adonan telur dan tepung, diamkan hingga berbusa lalu panggang.">
@@ -256,7 +261,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Sumatra Utara • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Bika Ambon</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -266,7 +271,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sumatra • Sumatra Barat"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Olahan daging sapi khas Minangkabau yang dimasak perlahan dengan santan kental dan racikan rempah kaya aroma hingga bumbunya meresap pekat."
                                  data-bahan="Daging sapi, santan kental, lengkuas, serai, cabai merah, bawang merah, bawang putih, kunyit, jahe."
                                  data-cara="Haluskan bumbu, masak bersama santan dan daun rempah hingga mendidih. Masukkan daging, aduk perlahan dengan api kecil hingga mengering.">
@@ -275,7 +280,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Sumatra Barat • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Rendang</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -284,7 +289,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Sumatra Barat"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Keripik singkong tipis renyah khas Bukittinggi yang dibalut bumbu balado cabai merah pedas manis mengilap."
                                  data-bahan="Singkong kupas iris tipis, cabai merah keriting, bawang merah, gula pasir, cuka, garam."
                                  data-cara="Goreng irisan singkong hingga renyah kering, lalu aduk cepat bersama tumisan cabai merah dan gula karamel hingga merata.">
@@ -293,7 +298,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Sumatra Barat • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Keripik Sanjai</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -303,7 +308,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sumatra • Riau"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Hidangan mi kenyal berbahan pati sagu khas Riau yang ditumis dengan bumbu gurih, taoge, kucai, serta ikan teri atau udang."
                                  data-bahan="Mi sagu basah, ikan teri goreng, udang kupas, tauge, daun kucai, bawang merah, bawang putih, cabai rawit."
                                  data-cara="Tumis bumbu halus hingga harum, masukkan udang, mi sagu, dan sedikit air. Aduk hingga kenyal lalu masukkan tauge, kucai, dan ikan teri.">
@@ -312,7 +317,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Riau • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Mie Sagu</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -321,7 +326,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Riau"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue bolu khas Melayu Riau bertekstur lembut dengan bentuk menyerupai bunga kemboja dan aroma harum pandan."
                                  data-bahan="Tepung terigu, santan, telur, gula pasir, air daun pandan suji, margarin."
                                  data-cara="Kocok telur dan gula, masukkan tepung serta santan pandan bergantian, tuang ke cetakan bunga lalu panggang hingga matang.">
@@ -330,7 +335,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Riau • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Bolu Kemojo</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -340,7 +345,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sumatra • Kepulauan Riau"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Mi kuah khas Kepulauan Riau dengan kuah kental berwarna kecokelatan yang gurih manis dan ditaburi bawang goreng serta irisan cabai."
                                  data-bahan="Mi kuning, udang kupas, ubi jalar merah halus, tauge, telur rebus, bawang putih, ebi, tepung maizena."
                                  data-cara="Tumis bumbu dan ebi, masukkan kaldu udang serta ubi halus. Kentalkan kuah lalu siramkan di atas mi kuning, tauge, dan telur.">
@@ -349,7 +354,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Kepulauan Riau • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Mie Lendir</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -358,7 +363,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Kepulauan Riau"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Siput laut khas Kepulauan Riau yang direbus dengan serai dan disajikan bersama sambal nanas pedas asam segar."
                                  data-bahan="Siput gonggong segar, serai, jahe, garam, cabai rawit, nanas parut, bawang putih."
                                  data-cara="Cuci bersih siput gonggong, rebus dengan serai dan jahe hingga matang, sajikan dengan sambal cabai nanas.">
@@ -367,7 +372,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Kepulauan Riau • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Gonggong</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -377,7 +382,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sumatra • Jambi"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Olahan ikan patin khas Jambi yang dimasak bersama tempoyak (fermentasi durian) dengan kuah kuning pedas gurih."
                                  data-bahan="Ikan patin, tempoyak durian, kunyit, cabai merah, serai, gula pasir, garam."
                                  data-cara="Didihkan air bersama tempoyak dan bumbu halus, masukkan potongan ikan patin lalu masak hingga matang dan kuah mengental.">
@@ -386,7 +391,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Jambi • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Tempoyak Ikan Patin</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -395,7 +400,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Jambi"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue kukus lembut berwarna hijau pandan khas Jambi yang disajikan dalam takir daun pisang dengan siraman gula merah cair."
                                  data-bahan="Tepung beras, santan kental, air daun pandan suji, gula aren sisir, garam."
                                  data-cara="Masak adonan tepung beras, santan, dan sari pandan hingga mengental, tuang ke takir daun pisang berisi gula aren lalu kukus.">
@@ -404,7 +409,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Jambi • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Padamaran</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -414,7 +419,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sumatra • Bengkulu"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Olahan ikan berbumbu rempah dan kelapa parut yang dibungkus daun talas lalu dikukus hingga lembut gurih."
                                  data-bahan="Ikan laut, daun talas muda, kelapa parut, kunyit, lengkuas, bawang merah, cabai merah."
                                  data-cara="Campur ikan dan bumbu kelapa, bungkus menggunakan daun talas muda lalu kukus hingga matang dan harum.">
@@ -423,7 +428,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Bengkulu • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Pendap</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -432,7 +437,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Bengkulu"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue tart tradisional khas Bengkulu bertekstur lembut dengan lapisan selai nanas manis di atasnya."
                                  data-bahan="Tepung terigu, mentega, telur, gula halus, santan kental, selai nanas."
                                  data-cara="Kocok mentega dan gula hingga lembut, masukkan telur, tepung, dan santan, cetak lalu olesi selai nanas dan panggang.">
@@ -441,7 +446,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Bengkulu • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Tat</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -451,7 +456,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sumatra • Sumatra Selatan"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Sup ikan patin khas Palembang dengan kuah asam pedas manis segar dari nanas, tomat, dan belimbing wuluh."
                                  data-bahan="Ikan patin, nanas potong, belimbing wuluh, cabai merah, terasi, bawang merah, serai, daun kemangi."
                                  data-cara="Rebus air dengan bumbu halus dan serai hingga mendidih, masukkan ikan patin, nanas, dan kemangi hingga matang.">
@@ -460,7 +465,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Sumatra Selatan • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Pindang Patin</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -469,7 +474,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Sumatra Selatan"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Kuliner ikonik Palembang berbahan dasar ikan giling dan sagu yang disajikan bersama kuah cuko bercita rasa asam, manis, dan pedas."
                                  data-bahan="Ikan tenggiri giling, tepung sagu, telur, bawang putih, gula aren, cabai rawit, asam jawa, mentimun."
                                  data-cara="Uleni ikan giling dengan air es, bawang putih, dan sagu. Bentuk dan rebus hingga mengapung, goreng sebentar lalu sajikan dengan cuko.">
@@ -478,7 +483,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Sumatra Selatan • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Pempek</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -488,7 +493,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sumatra • Bangka Belitung"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Sayur berkuah kuning segar khas Bangka Belitung dengan sentuhan kunyit, asam, dan nanas atau terasi yang menyegarkan."
                                  data-bahan="Ikan tenggiri, nanas potong, kunyit, cabai merah, terasi Bangka, bawang merah, asam jawa."
                                  data-cara="Didihkan air bersama bumbu halus dan asam jawa, masukkan ikan serta potongan nanas, masak hingga ikan matang segar.">
@@ -497,7 +502,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Bangka Belitung • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Lempah Kuning</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -506,7 +511,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Bangka Belitung"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue kering renyah khas Bangka Belitung berbahan tepung sagu dan santan dengan aroma jahe atau wijen yang lembut di mulut."
                                  data-bahan="Tepung sagu tani sangrai, santan kental, gula halus, kuning telur, wijen."
                                  data-cara="Kocok kuning telur dan gula, masukkan tepung sagu dan santan sedikit demi sedikit, cetak kecil lalu panggang hingga renyah.">
@@ -515,7 +520,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Bangka Belitung • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Rintak</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -525,7 +530,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sumatra • Lampung"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Hidangan khas Lampung berupa ikan bakar atau goreng yang disuwir lalu dicampur sambal terasi, mangga muda, atau tempoyak."
                                  data-bahan="Ikan bakar/pindang, tomat rampai, cabai rawit, terasi bakar, mangga muda, jeruk limau, lalapan."
                                  data-cara="Ulek kasar cabai, terasi, dan tomat rampai, beri perasan jeruk limau lalu sajikan bersama suwiran ikan bakar dan lalapan.">
@@ -534,7 +539,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Lampung • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Seruit</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -543,7 +548,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sumatra • Lampung"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Oleh-oleh khas Lampung berbahan pisang kepok iris tipis yang digoreng renyah lalu dibalut bubuk cokelat atau gula manis."
                                  data-bahan="Pisang kepok mengkal, air kapur sirih, garam, cokelat bubuk, gula halus."
                                  data-cara="Iris tipis pisang kepok, rendam sebentar, goreng hingga kering renyah lalu taburi bubuk cokelat manis secara merata.">
@@ -552,7 +557,7 @@
                                     <span class="badge rounded-pill mb-1">Sumatra</span>
                                     <small class="d-block fw-semibold kota-text">Lampung • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Keripik Pisang Lampung</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -572,7 +577,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Jawa • Banten"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Olahan ikan bandeng khas Banten yang durinya dihilangkan lalu dagingnya dibumbui rempah dan dipanggang di dalam kulitnya."
                                  data-bahan="Ikan bandeng, kelapa parut sangrai, santan, ketumbar, kunyit, bawang merah, cabai merah."
                                  data-cara="Keluarkan duri dan daging bandeng, campur daging dengan bumbu dan kelapa sangrai, masukkan kembali ke kulit ikan lalu bakar.">
@@ -581,7 +586,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">Banten • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Sate Bandeng</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -590,7 +595,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Jawa • Banten"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue tradisional khas Cilegon, Banten, dari beras ketan dan kacang tanah yang dikaramelisasi dengan gula merah hingga manis renyah."
                                  data-bahan="Beras ketan putih, kacang tanah sangrai, gula merah, gula pasir, air asam jawa."
                                  data-cara="Masak ketan kukus kering dan kacang tanah dalam karamel gula merah kental, ratakan di loyang lalu potong kotak.">
@@ -599,7 +604,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">Banten • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Gipang</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -609,7 +614,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Jawa • DKI Jakarta"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Soto khas Betawi dengan kuah gurih campuran santan atau susu serta isian daging sapi, jeroan, kentang, dan tomat."
                                  data-bahan="Daging sapi, santan, susu cair, serai, kayu manis, cengkih, kentang goreng, tomat, emping."
                                  data-cara="Rebus daging dengan rempah kering, masukkan bumbu halus, santan, dan susu cair. Sajikan dengan kentang, tomat, dan emping.">
@@ -618,7 +623,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">DKI Jakarta • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Soto Betawi</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -627,7 +632,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Jawa • DKI Jakarta"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Kuliner khas Betawi berbahan beras ketan, telur, dan ebi yang dimasak di atas wajan kecil hingga bagian bawahnya berkerak dan harum."
                                  data-bahan="Beras ketan putih, telur bebek, kelapa parut sangrai, ebi halus, bawang merah goreng, cabai."
                                  data-cara="Masak beras ketan di wajan kecil, campur kocokan telur dan ebi, balik wajan di atas bara arang hingga matang lalu taburi serundeng.">
@@ -636,7 +641,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">DKI Jakarta • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kerak Telor</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -646,7 +651,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Jawa • Jawa Barat"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Nasi hangat khas Sunda yang dikukus dalam daun pisang sehingga beraroma harum, disajikan bersama lalapan, sambal, dan lauk goreng."
                                  data-bahan="Nasi putih hangat, daun pisang, ayam goreng, tahu tempe, ikan asin, sambal terasi, lalapan."
                                  data-cara="Gulung nasi pulen panas di dalam daun pisang, kukus sebentar agar wangi lalu sajikan bersama lauk goreng dan sambal terasi.">
@@ -655,7 +660,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">Jawa Barat • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Nasi Timbel</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -664,7 +669,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Jawa • Jawa Barat"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Camilan gurih kenyal berbahan tepung aci khas Bandung yang disajikan dengan saus rujak pedas manis."
                                  data-bahan="Tepung tapioka, daun bawang, bawang putih halus, merica, gula merah, cabai rawit, asam jawa."
                                  data-cara="Aduk tepung tapioka dengan air mendidih berbumbu, bentuk pipih lalu goreng hingga mengembang. Sajikan dengan sambal rujak.">
@@ -673,7 +678,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">Jawa Barat • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Cireng</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -683,7 +688,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Jawa • Jawa Tengah"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Nasi gurih khas Solo, Jawa Tengah, yang dimasak dengan santan dan rempah lalu disajikan dengan suwiran ayam, telur, dan areh."
                                  data-bahan="Beras, labu siam, ayam kampung, santan kental, telur rebus, lengkuas, daun salam, cabai merah."
                                  data-cara="Masak labu siam dengan santan dan bumbu halus, rebus santan kental hingga menjadi areh, lalu sajikan bersama nasi dan ayam opor.">
@@ -692,7 +697,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">Jawa Tengah • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Nasi Liwet</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -701,7 +706,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Jawa • Jawa Tengah"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Tempe tipis yang dibalut adonan tepung berbumbu dan daun bawang lalu digoreng setengah matang agar tetap lembut di bagian dalam."
                                  data-bahan="Tempe mendoan tipis, tepung terigu, tepung beras, daun bawang iris, ketumbar, bawang putih, kunyit."
                                  data-cara="Celupkan tempe tipis ke adonan tepung berbumbu dan irisan daun bawang, goreng sebentar dalam minyak panas hingga lembut matang.">
@@ -710,7 +715,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">Jawa Tengah • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Tempe Mendoan</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -720,7 +725,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Jawa • DI Yogyakarta"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Masakan nangka muda khas Yogyakarta yang dimasak lama dengan gula aren dan santan sehingga bercita rasa manis gurih serta bertekstur lembut."
                                  data-bahan="Nangka muda, santan, gula aren, daun jati, bawang merah, bawang putih, ketumbar, kemiri, lengkuas."
                                  data-cara="Rebus nangka muda bersama bumbu halus, gula aren, santan, dan daun jati dengan api kecil hingga empuk dan kuah menyusut.">
@@ -729,7 +734,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">DI Yogyakarta • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Gudeg</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -738,7 +743,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Jawa • DI Yogyakarta"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Kue khas Yogyakarta berbahan tepung terigu dan gula dengan isian kacang hijau lembut yang dipanggang hingga matang."
                                  data-bahan="Tepung terigu, margarin, gula halus, kacang hijau kupas, santan, daun pandan."
                                  data-cara="Kukus kacang hijau lalu haluskan dengan santan dan gula, bungkus dengan kulit adonan tipis lalu panggang hingga matang.">
@@ -747,7 +752,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">DI Yogyakarta • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Bakpia Pathok</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -757,7 +762,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Jawa • Jawa Timur"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Sup daging sapi berkuah hitam pekat khas Jawa Timur yang mendapatkan warna dan cita rasa khas dari bumbu kluwek serta rempah aromatik."
                                  data-bahan="Daging sandung lamur, keluak, bawang merah, bawang putih, kunyit, serai, daun jeruk, tauge pendek."
                                  data-cara="Tumis bumbu halus bersama isi keluak hingga harum, masukkan ke rebusan daging sapi hingga empuk, sajikan dengan tauge dan sambal.">
@@ -766,7 +771,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">Jawa Timur • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Rawon</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -775,7 +780,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Jawa • Jawa Timur"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue tradisional khas Lamongan berbahan tepung ketan dan kelapa parut muda yang dipanggang hingga gurih manis legit."
                                  data-bahan="Tepung ketan, kelapa muda parut kasar, santan kental, gula pasir, daun pandan, garam."
                                  data-cara="Campur tepung ketan, kelapa parut, gula, dan santan hangat hingga kalis, pipihkan lalu panggang di atas wajan datar hingga kecokelatan.">
@@ -784,7 +789,7 @@
                                     <span class="badge rounded-pill mb-1">Jawa</span>
                                     <small class="d-block fw-semibold kota-text">Jawa Timur • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Wingko Babat</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -804,7 +809,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Kalimantan • Kalimantan Barat"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Bubur khas Kalimantan Barat yang terbuat dari beras sangrai dan aneka sayuran serta dedaunan dengan rasa gurih berempah."
                                  data-bahan="Beras sangrai tumbuk, daun pakis, kangkung, jagung manis, kacang tanah, ikan teri, serai, kunyit."
                                  data-cara="Masak beras sangrai bersama air kaldu dan bumbu halus hingga menjadi bubur, lalu masukkan aneka sayuran dan taburi teri.">
@@ -813,7 +818,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Barat • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Bubur Pedas</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -822,7 +827,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Kalimantan • Kalimantan Barat"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Penganan khas Kalimantan Barat dari beras ketan berisi ebi berbumbu yang dibungkus daun pisang berbentuk segitiga lalu dibakar."
                                  data-bahan="Beras ketan putih, santan, ebi sangrai halus, bawang merah, cabai merah, daun pisang."
                                  data-cara="Kukus beras ketan dengan santan, isi bagian tengahnya dengan tumisan ebi pedas gurih, bungkus segitiga lalu bakar hingga harum.">
@@ -831,7 +836,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Barat • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Pengkang</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -841,7 +846,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Kalimantan • Kalimantan Tengah"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Masakan ikan sungai dan umbut rotan muda khas Kalimantan Tengah dengan kuah asam gurih segar dan aroma rempah khas daerah."
                                  data-bahan="Umbut rotan muda, ikan sungai, serai, lengkuas, kunyit, bawang merah, cabai."
                                  data-cara="Potong umbut rotan dan buang durinya, rebus bersama bumbu halus hingga lunak, lalu masukkan potongan ikan hingga matang.">
@@ -850,7 +855,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Tengah • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Juhu Singkang</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -859,7 +864,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Kalimantan • Kalimantan Tengah"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue tradisional Suku Dayak berbentuk cincin berlubang dengan rasa manis gurih dari tepung beras dan gula aren."
                                  data-bahan="Tepung beras, gula aren sisir, kelapa parut, garam, air hangat."
                                  data-cara="Uleni tepung beras dengan gula aren cair dan kelapa parut, bentuk bulat berlubang tengah lalu goreng hingga kecokelatan.">
@@ -868,7 +873,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Tengah • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Wadai Cincin</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -878,7 +883,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Kalimantan • Kalimantan Selatan"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Soto ayam khas Banjar dengan kuah bening berempah hangat seperti kayu manis, cengkeh, dan kapulaga, biasanya disajikan bersama ketupat atau lontong."
                                  data-bahan="Ayam kampung, ketupat, perkedel kentang, telur rebus, kayu manis, cengkih, kapulaga, bawang putih, susu cair."
                                  data-cara="Tumis bumbu halus bersama rempah kering, masukkan ke kaldu rebusan ayam. Sajikan suwiran ayam dengan kuah, perkedel, dan ketupat.">
@@ -887,7 +892,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Selatan • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Soto Banjar</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -896,7 +901,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Kalimantan • Kalimantan Selatan"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue basah khas Banjar berbentuk bunga dengan tekstur lembut manis dari santan kental, telur bebek, dan pandan."
                                  data-bahan="Tepung terigu, santan kental, telur bebek, gula pasir, air daun pandan, garam."
                                  data-cara="Kocok telur dan gula, campur tepung dan santan pandan, panggang dalam cetakan bunga hingga matang lembut.">
@@ -905,7 +910,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Selatan • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Bingka</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -915,7 +920,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Kalimantan • Kalimantan Timur"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Olahan ayam khas Kalimantan Timur dengan bumbu merah gurih dan aromatik yang dipanggang atau dimasak hingga meresap."
                                  data-bahan="Ayam kampung, santan, cabai merah, bawang merah, lengkuas, serai, gula merah, terasi."
                                  data-cara="Ungkep ayam dengan bumbu halus dan santan hingga kuah mengental, lalu bakar ayam sambil dioles sisa bumbu hingga harum.">
@@ -924,7 +929,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Timur • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Ayam Cincane</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -933,7 +938,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Kalimantan • Kalimantan Timur"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Kerupuk ikan khas Samarinda dan Balikpapan berbahan ikan pipih atau tenggiri yang digoreng renyah dan gurih."
                                  data-bahan="Daging ikan tenggiri/pipih giling, tepung tapioka, bawang putih, telur, garam, gula."
                                  data-cara="Uleni daging ikan halus dengan bumbu dan tapioka, bentuk lonjong kecil lalu goreng dalam minyak hangat hingga mengembang renyah.">
@@ -942,7 +947,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Timur • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Amplang</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -952,7 +957,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Kalimantan • Kalimantan Utara"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Hidangan nasi khas Kalimantan Utara yang dimasak bersama ubi ungu dan jagung dengan lauk ikan asin dan sambal."
                                  data-bahan="Beras, ubi jalar ungu, jagung pipil, ikan asin, sambal terasi, bawang merah."
                                  data-cara="Masak beras bersama potongan ubi jalar ungu dan jagung hingga pulen, sajikan dengan ikan goreng dan sambal khas.">
@@ -961,7 +966,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Utara • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Nasi Subut</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -970,7 +975,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Kalimantan • Kalimantan Utara"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Camilan gorengan khas Tarakan dan Bulungan berisi sayuran, taoge, dan udang rebon yang renyah gurih."
                                  data-bahan="Tepung terigu, tepung beras, udang rebon, tauge, wortel iris korek, daun bawang, bawang putih."
                                  data-cara="Campur adonan tepung berbumbu dengan sayuran dan udang rebon, goreng sesendok demi sesendok hingga keemasan.">
@@ -979,7 +984,7 @@
                                     <span class="badge rounded-pill mb-1">Kalimantan</span>
                                     <small class="d-block fw-semibold kota-text">Kalimantan Utara • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Tumpi</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -999,7 +1004,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sulawesi • Sulawesi Utara"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Bubur sayuran khas Manado, Sulawesi Utara, yang kaya aneka sayuran hijau, labu, dan jagung serta disantap dengan ikan asin dan sambal."
                                  data-bahan="Beras, labu kuning, jagung manis pipil, kangkung, bayam, daun kemangi, serai, ikan asin jambal."
                                  data-cara="Rebus beras dengan labu kuning dan serai hingga hancur mengental, masukkan jagung dan sayuran hijau, sajikan dengan sambal roa.">
@@ -1008,7 +1013,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Utara • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Tinutuan</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1017,7 +1022,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sulawesi • Sulawesi Utara"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue panggang lembut khas Manado dengan isian kelapa muda, kacang kenari, dan aroma kayu manis."
                                  data-bahan="Tepung terigu, santan, kelapa muda keruk, kacang kenari, telur, gula pasir, kayu manis."
                                  data-cara="Campur adonan tepung, santan, telur, dan daging kelapa muda, tuang ke loyang lalu panggang dengan taburan kenari.">
@@ -1026,7 +1031,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Utara • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Klappertaart</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1036,7 +1041,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sulawesi • Gorontalo"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Sup jagung khas Gorontalo yang memadukan jagung manis, suwiran ikan atau ayam, kemangi, dan perasan jeruk nipis yang segar."
                                  data-bahan="Jagung pulut putih, ikan cakalang suwir, kelapa parut, daun kemangi, cabai rawit, jeruk nipis."
                                  data-cara="Rebus jagung hingga empuk, masukkan suwiran ikan cakalang dan bumbu sederhana. Sajikan hangat dengan kemangi dan jeruk nipis.">
@@ -1045,7 +1050,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Gorontalo • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Binte Biluhuta</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1054,7 +1059,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sulawesi • Gorontalo"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kudapan tradisional Gorontalo berupa pisang raja matang yang dibalut parutan singkong manis lalu digoreng renyah."
                                  data-bahan="Pisang raja matang, singkong parut peras, gula merah sisir, garam, minyak goreng."
                                  data-cara="Balut potongan pisang raja dengan campuran singkong parut dan gula merah, lalu goreng hingga keemasan renyah.">
@@ -1063,7 +1068,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Gorontalo • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Sabongi</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1073,7 +1078,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sulawesi • Sulawesi Tengah"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Sup kaki atau tulang sapi khas Palu, Sulawesi Tengah, dengan kuah asam gurih segar yang kaya rempah."
                                  data-bahan="Tulang kaki sapi, serai, jahe, bawang merah goreng, daun bawang, cabai rawit, jeruk nipis."
                                  data-cara="Rebus tulang kaki sapi bersama jahe dan serai hingga daging empuk dan kaldu gurih. Sajikan panas dengan bawang goreng dan jeruk nipis.">
@@ -1082,7 +1087,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Tengah • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kaledo</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1091,7 +1096,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sulawesi • Sulawesi Tengah"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Penganan khas Palu berbahan beras ketan gurih berisi abon ikan cakalang yang dibungkus daun pisang lalu dibakar."
                                  data-bahan="Beras ketan putih, santan, ikan cakalang suwir bumbu, serai, daun pandan, daun pisang."
                                  data-cara="Aruni ketan dengan santan dan garam, isi bagian tengahnya dengan suwiran ikan cakalang berbumbu, bungkus daun pisang lalu bakar.">
@@ -1100,7 +1105,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Tengah • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Lalampa</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1110,7 +1115,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sulawesi • Sulawesi Barat"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Ikan tongkol atau layang yang dimasak dengan kuah asam pedas segar khas suku Mandar menggunakan asam mangga."
                                  data-bahan="Ikan tongkol segar, asam mangga kering, kunyit, cabai rawit, bawang merah, minyak kelapa."
                                  data-cara="Susun ikan dalam panci bersama kunyit halus, cabai, dan asam mangga, beri air lalu masak hingga kuah mendidih meresap.">
@@ -1119,7 +1124,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Barat • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Bau Peapi</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1128,7 +1133,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sulawesi • Sulawesi Barat"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Camilan goreng renyah khas Sulawesi Barat berbentuk segitiga dengan isian ikan berbumbu gurih yang nikmat disantap selagi hangat."
                                  data-bahan="Kulit pangsit/lumpia, ikan cakalang suwir, bawang merah, bawang putih, merica, daun bawang."
                                  data-cara="Tumis suwiran ikan bersama bumbu hingga kering harum, lipat segitiga dalam kulit adonan lalu goreng hingga renyah keemasan.">
@@ -1137,7 +1142,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Barat • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Sambusa</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1147,7 +1152,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sulawesi • Sulawesi Selatan"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Sup daging dan jeroan khas Makassar dengan kuah gurih kaya kacang tanah sangrai dan rempah pilihan, nikmat disantap bersama buras atau ketupat."
                                  data-bahan="Daging sapi, kacang tanah sangrai halus, serai, lengkuas, ketumbar, jintan, bawang putih, air tajin."
                                  data-cara="Rebus daging bersama bumbu rempah dan kacang tanah halus dalam air tajin hingga empuk. Sajikan hangat dengan jeruk nipis dan buras.">
@@ -1156,7 +1161,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Selatan • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Coto Makassar</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1165,7 +1170,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sulawesi • Sulawesi Selatan"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Pisang raja matang yang dibalut adonan hijau pandan dan dikukus, disajikan bersama bubur sumsum, sirup merah, dan es serut."
                                  data-bahan="Pisang raja matang, tepung beras, air daun pandan, santan, sirup cocopandan, es serut."
                                  data-cara="Bungkus pisang kukus dengan kulit dadar hijau pandan, kukus sebentar lalu sajikan bersama bubur sumsum dan sirup.">
@@ -1174,7 +1179,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Selatan • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Es Pisang Ijo</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1184,7 +1189,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Sulawesi • Sulawesi Tenggara"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Olahan pati sagu khas Sulawesi Tenggara bertekstur kenyal bening yang disantap bersama kuah ikan atau sayur berkuah bumbu kuning."
                                  data-bahan="Tepung sagu, air mendidih, ikan tongkol, kunyit, serai, bayam, sambal terasi jeruk."
                                  data-cara="Aduk tepung sagu dengan air mendidih hingga mengental bening, sajikan bersama ikan kuah kuning dan sambal terasi segar.">
@@ -1193,7 +1198,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Tenggara • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Sinonggi</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1202,7 +1207,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Sulawesi • Sulawesi Tenggara"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue kering tradisional khas Kendari dan Wakatobi berbahan tepung beras sangrai dan kelapa parut dengan rasa manis gurih."
                                  data-bahan="Tepung beras sangrai, kelapa parut sangrai halus, gula merah sisir, telur, vanili."
                                  data-cara="Campur tepung beras sangrai, kelapa parut, gula merah, dan telur hingga kalis, bentuk pipih bulat lalu panggang hingga matang.">
@@ -1211,7 +1216,7 @@
                                     <span class="badge rounded-pill mb-1">Sulawesi</span>
                                     <small class="d-block fw-semibold kota-text">Sulawesi Tenggara • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Baruasa</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1231,7 +1236,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Bali • Bali"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Ayam utuh khas Bali yang dibumbui base genep kaya rempah lalu dipanggang atau dikukus perlahan hingga dagingnya empuk dan aromatik."
                                  data-bahan="Ayam kampung utuh, bumbu base genep (bawang merah, bawang putih, kunyit, lengkuas, kencur, jahe, cabai, terasi), daun singkong."
                                  data-cara="Lumuri seluruh bagian ayam dengan bumbu base genep, isi perut ayam dengan daun singkong berbumbu, bungkus lalu kukus atau bakar lama.">
@@ -1240,7 +1245,7 @@
                                     <span class="badge rounded-pill mb-1">Bali</span>
                                     <small class="d-block fw-semibold kota-text">Bali • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Ayam Betutu</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1249,7 +1254,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Bali • Bali"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Serabi tradisional Bali berbahan tepung beras dan santan yang dipanggang di cetakan tanah liat lalu disajikan dengan parutan kelapa dan kinca gula merah."
                                  data-bahan="Tepung beras, santan kental, air daun suji pandan, kelapa parut, gula merah sisir, garam."
                                  data-cara="Tuang adonan tepung beras santan ke cetakan tanah liat panas hingga berpori matang, sajikan dengan kelapa parut dan saus gula merah.">
@@ -1258,7 +1263,7 @@
                                     <span class="badge rounded-pill mb-1">Bali</span>
                                     <small class="d-block fw-semibold kota-text">Bali • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Jaja Laklak</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1278,7 +1283,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Nusa Tenggara • Nusa Tenggara Barat"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Ayam kampung panggang khas Lombok yang dibumbui pasta cabai merah, bawang, terasi, dan kencur sehingga rasanya pedas, gurih, dan harum."
                                  data-bahan="Ayam kampung muda, cabai merah keriting, cabai rawit, bawang merah, bawang putih, terasi bakar, santan."
                                  data-cara="Bakar ayam setengah matang, lumuri bumbu halus yang sudah ditumis dengan santan, lalu bakar kembali hingga bumbu meresap.">
@@ -1287,7 +1292,7 @@
                                     <span class="badge rounded-pill mb-1">Nusa Tenggara</span>
                                     <small class="d-block fw-semibold kota-text">Nusa Tenggara Barat • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Ayam Taliwang</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1296,7 +1301,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Nusa Tenggara • Nusa Tenggara Barat"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue basah khas Lombok berbentuk kerucut kecil seperti terompet yang dibungkus janur kelapa muda dengan rasa manis legit."
                                  data-bahan="Tepung beras, santan kental, gula merah sisir, daun pandan, janur kelapa muda."
                                  data-cara="Tuang adonan tepung beras, santan, dan gula merah ke dalam selongsong janur kerucut lalu kukus hingga matang kenyal.">
@@ -1305,7 +1310,7 @@
                                     <span class="badge rounded-pill mb-1">Nusa Tenggara</span>
                                     <small class="d-block fw-semibold kota-text">Nusa Tenggara Barat • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Cerorot</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1315,7 +1320,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Nusa Tenggara • Nusa Tenggara Timur"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Daging sapi asap khas Kupang, Nusa Tenggara Timur, yang diasapi perlahan hingga beraroma wangi dan disajikan dengan sambal lu'at."
                                  data-bahan="Daging sapi has dalam, garam, merica, daun kosambi, cabai rawit, jeruk nipis, daun kemangi."
                                  data-cara="Iris memanjang daging sapi, bumbui garam merica lalu asapi di atas bara kayu hingga matang kemerahan. Sajikan dengan sambal lu'at.">
@@ -1324,7 +1329,7 @@
                                     <span class="badge rounded-pill mb-1">Nusa Tenggara</span>
                                     <small class="d-block fw-semibold kota-text">Nusa Tenggara Timur • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Se'i Sapi</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1333,7 +1338,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Nusa Tenggara • Nusa Tenggara Timur"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue renyah manis khas Flores berbahan tepung beras dan gula aren yang dibentuk seperti sarang burung atau rambut."
                                  data-bahan="Tepung beras, gula aren, air santan encer, minyak goreng."
                                  data-cara="Aduk tepung beras dan larutan gula aren, kucurkan memutar menggunakan batok berlubang ke dalam minyak panas lalu lipat.">
@@ -1342,7 +1347,7 @@
                                     <span class="badge rounded-pill mb-1">Nusa Tenggara</span>
                                     <small class="d-block fw-semibold kota-text">Nusa Tenggara Timur • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Jawada</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1362,7 +1367,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Maluku • Maluku"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Ikan tongkol atau tuna asap khas Ambon yang dimasak dengan bumbu colo-colo pedas segar dan aroma daun kemangi."
                                  data-bahan="Ikan asar (ikan asap), bawang merah, cabai rawit, tomat merah, lemon cui, daun kemangi."
                                  data-cara="Panggang sebentar ikan asar hingga harum hangat, sajikan bersama nasi hangat dan siraman sambal colo-colo segar.">
@@ -1371,7 +1376,7 @@
                                     <span class="badge rounded-pill mb-1">Maluku</span>
                                     <small class="d-block fw-semibold kota-text">Maluku • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Ikan Asar</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1380,7 +1385,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Maluku • Maluku"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue tradisional Ambon berbahan sagu dan kacang kenari dengan aroma rempah kayu manis dan cengkih yang harum."
                                  data-bahan="Tepung sagu, gula aren, kacang kenari cincang, santan, kayu manis, cengkih."
                                  data-cara="Campur tepung sagu dengan larutan gula aren, santan, dan kenari, tuang ke cetakan lalu panggang hingga matang.">
@@ -1389,7 +1394,7 @@
                                     <span class="badge rounded-pill mb-1">Maluku</span>
                                     <small class="d-block fw-semibold kota-text">Maluku • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Bagea Kenari</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1399,7 +1404,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Maluku • Maluku Utara"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Hidangan ikan segar khas Maluku Utara yang diolah dengan perasan jeruk nipis, cabai, bawang merah, dan kacang sangrai bercita rasa segar gurih."
                                  data-bahan="Ikan tuna/cakalang segar, lemon cui, cabai rawit, bawang merah, kacang kenari sangrai, minyak kelapa."
                                  data-cara="Potong dadu daging ikan segar, lumuri garam dan air lemon cui, lalu siram dengan tumisan minyak panas bawang dan cabai.">
@@ -1408,7 +1413,7 @@
                                     <span class="badge rounded-pill mb-1">Maluku</span>
                                     <small class="d-block fw-semibold kota-text">Maluku Utara • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Gohu Ikan</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1417,7 +1422,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Maluku • Maluku Utara"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Olahan pisang mulu bebe khas Ternate yang dipipihkan, digoreng renyah, lalu disajikan bersama sambal roa pedas gurih."
                                  data-bahan="Pisang mulu bebe/kepok, ikan roa asap, cabai rawit, bawang merah, tomat, jeruk nipis."
                                  data-cara="Goreng pisang setengah matang, pipihkan lalu goreng kembali hingga renyah. Sajikan dengan sambal ikan roa.">
@@ -1426,7 +1431,7 @@
                                     <span class="badge rounded-pill mb-1">Maluku</span>
                                     <small class="d-block fw-semibold kota-text">Maluku Utara • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Pisang Mulu Bebe</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1446,7 +1451,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Papua • Papua"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Makanan pokok berbahan dasar sagu khas Papua dengan tekstur kenyal lengket yang nikmat dipadukan dengan kuah ikan kuning berbumbu segar."
                                  data-bahan="Tepung sagu, air mendidih, ikan tongkol, kunyit, jahe, serai, daun kemangi, jeruk nipis."
                                  data-cara="Siram tepung sagu dengan air mendidih sambil diaduk cepat hingga mengental bening. Sajikan dengan ikan kuah kuning hangat.">
@@ -1455,7 +1460,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Papeda</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1464,7 +1469,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Papua • Papua"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Camilan khas Jayapura berbahan tepung sagu yang digoreng pipih lalu diberi taburan gula aren manis legit."
                                  data-bahan="Tepung sagu halus, gula aren sisir, kelapa parut, garam, minyak goreng."
                                  data-cara="Goreng adonan sagu tipis di wajan datar hingga kecokelatan, taburi gula aren dan kelapa parut lalu lipat.">
@@ -1473,7 +1478,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Martabak Sagu</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1483,7 +1488,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Papua • Papua Barat"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Olahan ikan bakar khas Manokwari, Papua Barat, dengan sambal mentah pedas segar beraroma jeruk nipis dan rempah."
                                  data-bahan="Ikan tongkol segar, cabai rawit merah, bawang merah, jeruk nipis, garam, gula."
                                  data-cara="Bakar ikan tongkol hingga matang harum, tumbuk kasar cabai rawit dan bawang merah mentah lalu siramkan di atas ikan.">
@@ -1492,7 +1497,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Barat • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Ikan Bakar Manokwari</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1501,7 +1506,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Papua • Papua Barat"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Pai susu khas Fakfak, Papua Barat, dengan pinggiran renyah dan isian vla susu manis lembut di bagian tengah."
                                  data-bahan="Tepung terigu, margarin, kuning telur, susu kental manis, vanili, maizena."
                                  data-cara="Cetak adonan kulit pai di loyang bundar, tuang adonan vla susu di tengahnya lalu panggang hingga matang keemasan.">
@@ -1510,7 +1515,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Barat • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Lontar</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1520,7 +1525,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Papua • Papua Selatan"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Olahan sagu khas Merauke, Papua Selatan, yang dimasak dengan kelapa parut dan daging di atas batu panas sehingga menghasilkan rasa gurih khas."
                                  data-bahan="Tepung sagu, daging cincang, kelapa parut, bawang merah, bawang putih, serai, daun pisang."
                                  data-cara="Campur tepung sagu dengan kelapa parut, daging berbumbu, dan rempah. Bungkus daun pisang lalu panggang di atas batu panas.">
@@ -1529,7 +1534,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Selatan • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Sagu Sep</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1538,7 +1543,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Papua • Papua Selatan"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Olahan sagu yang dipanggang hingga berbentuk lembaran pipih kering dan renyah, sering disantap bersama teh hangat."
                                  data-bahan="Tepung sagu, kelapa parut, gula merah sisir, garam."
                                  data-cara="Campur tepung sagu dengan kelapa parut dan gula merah, panggang dalam cetakan tanah liat hingga kecokelatan.">
@@ -1547,7 +1552,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Selatan • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Sagu Lempeng</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1557,7 +1562,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Papua • Papua Tengah"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Hidangan tradisional masyarakat Papua Tengah berupa umbi-umbian, sayuran, dan daging yang dimasak bersama batu panas."
                                  data-bahan="Ubi jalar, keladi, daun pakis, jagung, daging, daun pisang, batu sungai panas."
                                  data-cara="Susun daun pisang, sayuran, umbi, dan daging di atas batu yang telah dibakar panas hingga matang merata oleh uap panas.">
@@ -1566,7 +1571,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Tengah • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Bakar Batu</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1575,7 +1580,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Papua • Papua Tengah"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue kering khas Nabire dan Timika berbahan tepung sagu dan parutan kelapa dengan rasa manis gurih yang renyah."
                                  data-bahan="Tepung sagu sangrai, kelapa parut kering, gula pasir, mentega, telur."
                                  data-cara="Kocok mentega dan gula, masukkan telur, kelapa parut, dan tepung sagu, cetak bulat pipih lalu panggang hingga matang.">
@@ -1584,7 +1589,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Tengah • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Kue Sagu Kelapa</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1594,7 +1599,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Papua • Papua Pegunungan"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Kuliner udang air tawar khas lembah pegunungan Papua dengan capit besar menyerupai capit kepiting yang dimasak dengan bumbu gurih."
                                  data-bahan="Udang selingkuh segar, bawang putih, mentega, saus tiram, jeruk nipis, merica."
                                  data-cara="Bersihkan udang, tumis bawang putih dengan mentega hingga harum, masukkan udang dan bumbu saus hingga matang kemerahan.">
@@ -1603,7 +1608,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Pegunungan • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Udang Selingkuh</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1612,7 +1617,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Papua • Papua Pegunungan"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Ubi ungu manis khas Lembah Baliem, Wamena, yang dipanggang di atas bara api hingga teksturnya lembut dan manis alami."
                                  data-bahan="Ubi ungu Wamena segar, madu hutan atau kelapa parut, sedikit garam."
                                  data-cara="Cuci bersih ubi ungu Wamena, panggang di atas bara api hingga kulitnya kecokelatan dan bagian dalamnya empuk manis.">
@@ -1621,7 +1626,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Pegunungan • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Ubi Bakar Wamena</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1631,7 +1636,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="berat"
                                  data-loc="Papua • Papua Barat Daya"
-                                 data-star="★★★★★"
+                                 data-star="⭐⭐⭐⭐⭐"
                                  data-desc="Sup ikan laut segar khas Sorong, Papua Barat Daya, dengan kuah kuning kunyit dan asam segar belimbing wuluh."
                                  data-bahan="Ikan kakap/kerapu segar, kunyit, serai, jahe, belimbing wuluh, kemangi, jeruk nipis."
                                  data-cara="Rebus air dengan bumbu kunyit halus dan serai hingga mendidih, masukkan potongan ikan segar dan belimbing wuluh hingga matang.">
@@ -1640,7 +1645,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Barat Daya • Berat</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Ikan Kuah Kuning</h4>
-                                    <small class="bintang-text">★★★★★</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1649,7 +1654,7 @@
                             <div class="kotak rounded-4 p-3 d-flex flex-column justify-content-end"
                                  data-type="ringan"
                                  data-loc="Papua • Papua Barat Daya"
-                                 data-star="★★★★☆"
+                                 data-star="⭐⭐⭐⭐"
                                  data-desc="Kue gulung kering khas Sorong berbahan sagu dan gula aren dengan tekstur renyah serta rasa manis gurih."
                                  data-bahan="Tepung sagu halus, kelapa parut sangrai, gula aren sisir, kayu manis bubuk."
                                  data-cara="Sangrai tepung sagu hingga matang ringan, taburi campuran kelapa dan gula aren lalu gulung hangat hingga renyah.">
@@ -1658,7 +1663,7 @@
                                     <span class="badge rounded-pill mb-1">Papua</span>
                                     <small class="d-block fw-semibold kota-text">Papua Barat Daya • Ringan</small>
                                     <h4 class="fs-5 fw-bold mb-0 nama-makanan">Sagu Gula</h4>
-                                    <small class="bintang-text">★★★★☆</small>
+                                    <small class="bintang-text">⭐⭐⭐⭐</small>
                                 </div>
                             </div>
                         </div>
@@ -1690,10 +1695,10 @@
                 </div>
                 <div class="col">
                     <div class="team-card rounded-4 p-4 h-100 d-flex flex-column align-items-center">
-                        <img src="img/anggota2.jpg" alt="Anggota 2" class="rounded-circle team-img mb-3" onerror="this.src='https://placehold.co/200x200/8C2D19/FFF8EE?text=Foto+2'">
-                        <h3 class="h5 fw-bold mb-1">Nama Anggota 2</h3>
+                        <img src="img/zahra1.jpeg" alt="Anggota 2" class="rounded-circle team-img mb-3" onerror="this.src='https://placehold.co/200x200/8C2D19/FFF8EE?text=Foto+2'">
+                        <h3 class="h5 fw-bold mb-1">Zahra Huma Aulia</h3>
                         <!-- <p class="small mb-3">Desainer Tampilan &amp; CSS</p> -->
-                        <a href="https://www.linkedin.com/in/username-anggota-2" target="_blank" rel="noopener noreferrer" class="btn btn-sm rounded-3 fw-semibold btn-linkedin mt-auto d-inline-flex align-items-center gap-1">
+                        <a href="https://www.linkedin.com/in/zahra-huma-aulia-9447ba44a?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="btn btn-sm rounded-3 fw-semibold btn-linkedin mt-auto d-inline-flex align-items-center gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
                                 <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
                             </svg>
@@ -1703,8 +1708,8 @@
                 </div>
                 <div class="col">
                     <div class="team-card rounded-4 p-4 h-100 d-flex flex-column align-items-center">
-                        <img src="img/anggota3.jpg" alt="Anggota 3" class="rounded-circle team-img mb-3" onerror="this.src='https://placehold.co/200x200/8C2D19/FFF8EE?text=Foto+3'">
-                        <h3 class="h5 fw-bold mb-1">Nama Anggota 3</h3>
+                        <img src="img/landung.png" alt="Anggota 3" class="rounded-circle team-img mb-3" onerror="this.src='https://placehold.co/200x200/8C2D19/FFF8EE?text=Foto+3'">
+                        <h3 class="h5 fw-bold mb-1">Laurensius Landung Rakamantyo Casillas</h3>
                         <!-- <p class="small mb-3">Riset Data Kuliner</p> -->
                         <a href="https://www.linkedin.com/in/username-anggota-3" target="_blank" rel="noopener noreferrer" class="btn btn-sm rounded-3 fw-semibold btn-linkedin mt-auto d-inline-flex align-items-center gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
@@ -1716,8 +1721,8 @@
                 </div>
                 <div class="col">
                     <div class="team-card rounded-4 p-4 h-100 d-flex flex-column align-items-center">
-                        <img src="img/anggota4.jpg" alt="Anggota 4" class="rounded-circle team-img mb-3" onerror="this.src='https://placehold.co/200x200/8C2D19/FFF8EE?text=Foto+4'">
-                        <h3 class="h5 fw-bold mb-1">Nama Anggota 4</h3>
+                        <img src="img/gladly.png" alt="Anggota 4" class="rounded-circle team-img mb-3" onerror="this.src='https://placehold.co/200x200/8C2D19/FFF8EE?text=Foto+4'">
+                        <h3 class="h5 fw-bold mb-1">Gladly Krisfort Sapulette</h3>
                         <!-- <p class="small mb-3">Kurator Foto &amp; Resep</p> -->
                         <a href="https://www.linkedin.com/in/username-anggota-4" target="_blank" rel="noopener noreferrer" class="btn btn-sm rounded-3 fw-semibold btn-linkedin mt-auto d-inline-flex align-items-center gap-1">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
@@ -1776,12 +1781,14 @@
                 <span class="fw-bold">Jelajah Rasa — Katalog Kuliner Nusantara</span>
                 <span>38 Provinsi • 1 Makanan Berat &amp; 1 Makanan Ringan • Panduan Resep</span>
             </div>
-            <div class="text-center opacity-75">&copy; 2026 Tim Jelajah Rasa.</div>
-        </div>
+            <div class="text-center ">&copy; 2026 Tim Jelajah Rasa.</div>
+        </div> 
     </footer>
+     <!-- pake opacity depan center kalo ma dibikin agak redup -->
 
     <!-- Bootstrap JS & Script Utama -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
 </body>
-</html>
+<!-- </html><h2 class="h4 fw-bold mb-3 prov-title pb-2">Tulis Judul di Sini</h2> ini untuk kasih garis garis -->
+

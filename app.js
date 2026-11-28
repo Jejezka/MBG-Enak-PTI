@@ -1,9 +1,10 @@
-let nav = 'home', reg = 'all';
-const filter = () => {
-    const q = search.value.toLowerCase(), all = nav !== 'home' || q !== '';
-    catalogSec.classList.toggle('d-none', nav === 'about'); aboutSec.classList.toggle('d-none', nav !== 'about'); rekSec.classList.toggle('d-none', all); provSec.classList.toggle('d-none', !all); regionNav.classList.toggle('d-none', !all || nav === 'about'); resepInfo.classList.toggle('d-none', nav !== 'resep');
-    document.querySelectorAll('#provSec .col').forEach(c => { const k = c.firstElementChild; c.classList.toggle('d-none', !((nav === 'semua' || nav === 'resep' || nav === 'home' || k.dataset.type === nav) && (reg === 'all' || k.dataset.loc.includes(reg)) && (k.innerText + k.dataset.loc).toLowerCase().includes(q))); });
-    document.querySelectorAll('#provSec .prov-group').forEach(g => g.classList.toggle('d-none', !g.querySelector('.col:not(.d-none)')));
+let mode = 'home', reg = 'all', modal = new bootstrap.Modal(foodModal);
+const render = () => {
+    const q = search.value.toLowerCase().trim(), home = mode === 'home' && !q; let ada = 0;
+    [aboutSec, catalogSec, regionNav, resepInfo, rekSec, provSec].forEach((e, i) => e.classList.toggle('d-none', [mode !== 'about', mode === 'about', home || mode === 'about', mode !== 'resep', !home, home][i]));
+    document.querySelectorAll('#provSec .prov-group').forEach(s => { let n = 0; s.querySelectorAll('.col').forEach(c => { const k = c.querySelector('.kotak'), ok = (!['berat', 'ringan'].includes(mode) || k.dataset.type === mode) && (reg === 'all' || k.dataset.loc.startsWith(reg)) && (k.innerText + k.dataset.loc).toLowerCase().includes(q); c.classList.toggle('d-none', !ok); if (ok) n++, ada++; }); s.classList.toggle('d-none', !n); });
+    emptyMsg.classList.toggle('d-none', home || ada > 0);
 };
-document.onclick = e => { const t = e.target, k = t.closest('.kotak'); if (t.dataset.nav) { nav = t.dataset.nav; document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b === t)); filter(); } if (t.dataset.reg) { reg = t.dataset.reg; document.querySelectorAll('.reg-btn').forEach(b => b.classList.toggle('active', b === t)); filter(); } if (k) { mImg.src = k.querySelector('img').src; mTag.textContent = k.dataset.loc; mStar.textContent = k.dataset.star; mTitle.textContent = k.querySelector('.nama-makanan').textContent; mDesc.textContent = k.dataset.desc; mBahan.textContent = k.dataset.bahan; mCara.textContent = k.dataset.cara; resepWrap.classList.toggle('d-none', nav !== 'resep'); resepBox.classList.add('d-none'); new bootstrap.Modal(foodModal).show(); } };
-search.oninput = filter;
+document.querySelectorAll('.nav-btn, .reg-btn').forEach(b => b.onclick = () => { const nav = b.classList.contains('nav-btn'); document.querySelectorAll(nav ? '.nav-btn' : '.reg-btn').forEach(x => x.classList.remove('active')); b.classList.add('active'); nav ? mode = b.dataset.nav : reg = b.dataset.reg; render(); });
+search.oninput = render;
+document.querySelectorAll('.kotak').forEach(k => k.onclick = () => { [mImg.src, mTag.textContent, mStar.textContent, mTitle.textContent, mDesc.textContent, mBahan.textContent, mCara.textContent] = [k.querySelector('img').src, k.dataset.loc, k.dataset.star, k.querySelector('.nama-makanan').textContent, k.dataset.desc, k.dataset.bahan, k.dataset.cara]; resepWrap.classList.toggle('d-none', mode !== 'resep'); resepBox.classList.add('d-none'); modal.show(); });
